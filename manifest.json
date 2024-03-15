@@ -1,11 +1,11 @@
 {
-    "name": "portfolio",
-    "short_name": "portfolio",
+    "name": "portfolio2",
+    "short_name": "portfolio2",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "portfolio of vaju makwana.",
+    "description": "a portfolio project for info about me.  - vaju makwana 😁",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
@@ -29,7 +29,4 @@
             "src": "icons/Icon-maskable-512.png",
             "sizes": "512x512",
             "type": "image/png",
-            "purpose": "maskable"
-        }
-    ]
-}
+            "purpose"
