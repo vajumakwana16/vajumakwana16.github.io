@@ -1,11 +1,11 @@
 {
-    "name": "portfolio2",
-    "short_name": "portfolio2",
+    "name": "siffra",
+    "short_name": "siffra",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "a portfolio project for info about me.  - vaju makwana 😁",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
