@@ -1,11 +1,11 @@
 {
-    "name": "siffra",
-    "short_name": "siffra",
+    "name": "Vaju Makwana",
+    "short_name": "Vaju Makwana",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "information about vaju makwana,who is know as flutter developer",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
