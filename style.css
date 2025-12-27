@@ -645,7 +645,7 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
     gap: 3rem;
     margin-top: 4rem;
     margin-bottom: 5rem;
@@ -668,7 +668,7 @@ body {
 }
 
 .project-image {
-    height: 250px;
+    height: 280px;
     background: var(--gradient-primary);
     position: relative;
     display: flex;
