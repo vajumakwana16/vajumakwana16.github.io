@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Towus</title>
+  <meta name="description" content="Towus Privacy Policy – Learn how we collect, use, and protect your personal data in the Towus messaging application." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary:    #09090f;
+      --bg-secondary:  #111120;
+      --bg-card:       #14142a;
+      --accent-1:      #6c63ff;
+      --accent-2:      #a78bfa;
+      --accent-glow:   rgba(108, 99, 255, 0.22);
+      --text-primary:  #f0f0ff;
+      --text-secondary:#a0a0c0;
+      --text-muted:    #606080;
+      --border:        rgba(108, 99, 255, 0.18);
+      --radius-lg:     18px;
+      --radius-md:     12px;
+      --radius-sm:     8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.75;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Background orbs ── */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::before {
+      width: 600px; height: 600px;
+      top: -200px; left: -200px;
+      background: rgba(108, 99, 255, 0.12);
+    }
+    body::after {
+      width: 500px; height: 500px;
+      bottom: -150px; right: -150px;
+      background: rgba(167, 139, 250, 0.09);
+    }
+
+    /* ── Hero header ── */
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 80px 24px 60px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(108,99,255,0.06) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .logo-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 32px var(--accent-glow);
+      font-size: 26px;
+    }
+
+    .logo-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      background: linear-gradient(to bottom right, #ffffff, var(--text-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p.subtitle {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 0.82rem;
+      color: var(--accent-2);
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Layout ── */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+    }
+
+    .toc h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-2);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 6px 24px;
+    }
+
+    .toc li { color: var(--text-secondary); font-size: 0.92rem; }
+
+    .toc a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--accent-2); }
+
+    /* ── Section cards ── */
+    .section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 38px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .section:hover {
+      border-color: rgba(108,99,255,0.38);
+      box-shadow: 0 8px 40px rgba(108,99,255,0.08);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(108,99,255,0.22), rgba(167,139,250,0.15));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+
+    .section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .section p {
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+      margin-bottom: 14px;
+    }
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul, .section ol {
+      padding-left: 20px;
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .section ul li::marker { color: var(--accent-1); }
+    .section ol li::marker { color: var(--accent-1); font-weight: 600; }
+
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    /* ── Highlight chips ── */
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .chip {
+      background: rgba(108,99,255,0.12);
+      border: 1px solid rgba(108,99,255,0.25);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 0.84rem;
+      color: var(--accent-2);
+    }
+
+    /* ── Callout box ── */
+    .callout {
+      background: rgba(108,99,255,0.08);
+      border-left: 3px solid var(--accent-1);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+    }
+
+    .callout strong { color: var(--accent-2); }
+
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.91rem;
+    }
+
+    thead th {
+      background: rgba(108,99,255,0.12);
+      color: var(--accent-2);
+      font-weight: 600;
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody td {
+      padding: 11px 16px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(108,99,255,0.12), rgba(167,139,250,0.07));
+      border: 1px solid rgba(108,99,255,0.3);
+      border-radius: var(--radius-md);
+      padding: 22px 26px;
+      margin-top: 10px;
+    }
+
+    .contact-card p { margin: 4px 0; color: var(--text-secondary); font-size: 0.93rem; }
+
+    .contact-card a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 32px 24px 48px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer span {
+      background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    header { animation: fadeUp 0.6s ease both; }
+
+    .section, .toc {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .section { padding: 24px 22px; }
+      .toc { padding: 22px 20px; }
+      .toc ol { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="logo-wrap">
+      <div class="logo-icon">💬</div>
+      <span class="logo-name">Towus</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">We are committed to protecting your privacy. This policy explains what data we collect, why we collect it, and how it is kept safe.</p>
+    <span class="badge">Last Updated: April 12, 2026</span>
+  </header>
+
+  <!-- ══ MAIN ══ -->
+  <main>
+
+    <!-- Table of Contents -->
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#information-we-collect">Information We Collect</a></li>
+        <li><a href="#how-we-use">How We Use Your Data</a></li>
+        <li><a href="#sharing">Sharing &amp; Disclosure</a></li>
+        <li><a href="#data-security">Data Security &amp; Encryption</a></li>
+        <li><a href="#data-retention">Data Retention</a></li>
+        <li><a href="#your-rights">Your Rights</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1. Introduction -->
+    <section id="introduction" class="section">
+      <div class="section-header">
+        <div class="section-icon">👋</div>
+        <h2>1. Introduction</h2>
+      </div>
+      <p>Welcome to <strong>Towus</strong> ("we", "our", or "us"). Towus is a private, secure messaging application designed to let you communicate in real time with the people you trust. This Privacy Policy describes how we collect, use, store, and protect information in connection with your use of the Towus mobile application (the "App").</p>
+      <p>By installing or using Towus, you agree to the collection and use of information in accordance with this policy. If you do not agree with any part of this policy, please discontinue use of the App.</p>
+    </section>
+
+    <!-- 2. Information We Collect -->
+    <section id="information-we-collect" class="section">
+      <div class="section-header">
+        <div class="section-icon">📋</div>
+        <h2>2. Information We Collect</h2>
+      </div>
+
+      <p>We collect information that is necessary to provide and improve our services. This falls into two categories: information you provide directly and information collected automatically.</p>
+
+      <p><strong>2.1 Information You Provide</strong></p>
+      <ul>
+        <li><strong>Account Information:</strong> When you sign in with Google, we receive your name, email address, and profile picture from Google Sign-In.</li>
+        <li><strong>Profile Data:</strong> Any display name, bio, or avatar photo you choose to add within the App.</li>
+        <li><strong>Messages &amp; Media:</strong> Text messages, images, videos, audio recordings, files, and documents you send or receive through the App.</li>
+        <li><strong>Location Data:</strong> If you choose to share your location in a conversation, we temporarily process your geographic coordinates to generate a shareable location message. Location is only shared when you explicitly initiate it.</li>
+        <li><strong>QR Code Data:</strong> When you scan a QR code to add a contact, the code content is processed locally on your device.</li>
+      </ul>
+
+      <p><strong>2.2 Information Collected Automatically</strong></p>
+      <ul>
+        <li><strong>Device Information:</strong> Device model, operating system version, unique device identifiers (for push notifications), and mobile network information.</li>
+        <li><strong>Push Notification Tokens:</strong> Firebase Cloud Messaging (FCM) tokens are collected solely to deliver message notifications to your device.</li>
+        <li><strong>Usage Data:</strong> Online/offline presence status, message delivery timestamps (sent, delivered, read), and typing indicators — used only to power real-time messaging features.</li>
+        <li><strong>App Diagnostics:</strong> Crash reports and performance data to help us identify and fix bugs (collected via Firebase Crashlytics if enabled).</li>
+      </ul>
+
+      <div class="chip-row">
+        <span class="chip">🔐 Google Account</span>
+        <span class="chip">💬 Chat Messages</span>
+        <span class="chip">📸 Media Files</span>
+        <span class="chip">📍 Location (optional)</span>
+        <span class="chip">🔔 Push Tokens</span>
+        <span class="chip">📱 Device Info</span>
+      </div>
+    </section>
+
+    <!-- 3. How We Use Your Data -->
+    <section id="how-we-use" class="section">
+      <div class="section-header">
+        <div class="section-icon">⚙️</div>
+        <h2>3. How We Use Your Data</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Purpose</th>
+              <th>Legal Basis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Account &amp; Profile</td>
+              <td>Identify you, display your profile in conversations</td>
+              <td>Contract performance</td>
+            </tr>
+            <tr>
+              <td>Messages &amp; Media</td>
+              <td>Deliver your messages and media to recipients</td>
+              <td>Contract performance</td>
+            </tr>
+            <tr>
+              <td>Push Notification Token</td>
+              <td>Send you message notifications</td>
+              <td>Legitimate interest / consent</td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>Create shareable location messages (user-initiated only)</td>
+              <td>Consent</td>
+            </tr>
+            <tr>
+              <td>Presence &amp; Typing Status</td>
+              <td>Show online status and typing indicators to chat partners</td>
+              <td>Contract performance</td>
+            </tr>
+            <tr>
+              <td>Device &amp; Diagnostic Data</td>
+              <td>Improve app stability and debug issues</td>
+              <td>Legitimate interest</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>We do <strong>not</strong> use your data for advertising, sell it to third parties, or use it for any purpose not stated in this policy.</p>
+    </section>
+
+    <!-- 4. Sharing & Disclosure -->
+    <section id="sharing" class="section">
+      <div class="section-header">
+        <div class="section-icon">🔗</div>
+        <h2>4. Sharing &amp; Disclosure</h2>
+      </div>
+      <p>We do not sell, trade, or rent your personal information. We may share data only in the following limited circumstances:</p>
+      <ul>
+        <li><strong>Service Providers:</strong> We use Google Firebase (Firestore, Storage, Auth, Cloud Messaging) to operate the App. These services process data on our behalf under strict data processing agreements.</li>
+        <li><strong>Legal Compliance:</strong> If required by law, court order, or governmental authority, we may disclose information to comply with legal obligations.</li>
+        <li><strong>Safety:</strong> To prevent fraud, abuse, or imminent harm to users or others.</li>
+        <li><strong>Business Transfer:</strong> In the unlikely event of a merger, acquisition, or asset sale, your data may be transferred. We will provide notice before this occurs.</li>
+      </ul>
+      <div class="callout">
+        <strong>Your messages are yours.</strong> We do not read, analyze, or use the content of your private conversations for any purpose other than delivering them.
+      </div>
+    </section>
+
+    <!-- 5. Data Security -->
+    <section id="data-security" class="section">
+      <div class="section-header">
+        <div class="section-icon">🔒</div>
+        <h2>5. Data Security &amp; Encryption</h2>
+      </div>
+      <p>Protecting your data is a core priority. We implement the following safeguards:</p>
+      <ul>
+        <li><strong>Cryptographic Encryption:</strong> Sensitive data within the App is encrypted using industry-standard cryptographic algorithms via the <code>cryptography</code> package.</li>
+        <li><strong>Secure Storage:</strong> Authentication tokens and sensitive credentials are stored in the device's secure enclave using <code>flutter_secure_storage</code>.</li>
+        <li><strong>Biometric Authentication:</strong> Towus supports biometric lock (fingerprint / face recognition) to prevent unauthorized access to the App on your device.</li>
+        <li><strong>Screen Protection:</strong> Screenshots and screen recording are restricted within the App to prevent unauthorized capture of private conversations.</li>
+        <li><strong>Firebase Security Rules:</strong> All Firestore and Storage data is protected by strict server-side security rules — only authenticated users can access their own data.</li>
+        <li><strong>HTTPS / TLS:</strong> All data in transit between your device and our servers is encrypted with TLS.</li>
+      </ul>
+      <p>While we strive to use commercially acceptable means to protect your data, no method of electronic transmission or storage is 100% secure. We cannot guarantee absolute security.</p>
+    </section>
+
+    <!-- 6. Data Retention -->
+    <section id="data-retention" class="section">
+      <div class="section-header">
+        <div class="section-icon">🗂️</div>
+        <h2>6. Data Retention</h2>
+      </div>
+      <p>We retain your data for as long as your account is active or as needed to provide the service:</p>
+      <ul>
+        <li><strong>Messages &amp; Media:</strong> Stored on Firebase servers until you or the recipient deletes them, or your account is deleted.</li>
+        <li><strong>Account Data:</strong> Retained until you delete your account through the App.</li>
+        <li><strong>Push Tokens:</strong> Updated or removed when you log out or uninstall the App.</li>
+        <li><strong>Location Data:</strong> Only processed momentarily to create a location message; we do not store a history of your locations.</li>
+        <li><strong>Diagnostic Logs:</strong> Retained for up to 90 days for bug-fixing purposes.</li>
+      </ul>
+      <p>Upon account deletion, your profile information and associated data are permanently removed from our active systems. Some residual data may remain in backups for a limited period before being overwritten.</p>
+    </section>
+
+    <!-- 7. Your Rights -->
+    <section id="your-rights" class="section">
+      <div class="section-header">
+        <div class="section-icon">⚖️</div>
+        <h2>7. Your Rights</h2>
+      </div>
+      <p>Depending on your jurisdiction, you may have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+        <li><strong>Rectification:</strong> Request correction of inaccurate or incomplete information.</li>
+        <li><strong>Erasure:</strong> Request deletion of your personal data ("right to be forgotten").</li>
+        <li><strong>Portability:</strong> Request your data in a machine-readable format.</li>
+        <li><strong>Objection:</strong> Object to processing based on legitimate interests.</li>
+        <li><strong>Withdrawal of Consent:</strong> Withdraw consent for location sharing or notifications at any time through your device settings.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at the email address in the <a href="#contact" style="color: var(--accent-2);">Contact Us</a> section. We will respond within 30 days.</p>
+    </section>
+
+    <!-- 8. Children's Privacy -->
+    <section id="children" class="section">
+      <div class="section-header">
+        <div class="section-icon">🧒</div>
+        <h2>8. Children's Privacy</h2>
+      </div>
+      <p>Towus is <strong>not intended for use by individuals under the age of 13</strong>. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal data, please contact us immediately so we can delete that information.</p>
+    </section>
+
+    <!-- 9. Third-Party Services -->
+    <section id="third-party" class="section">
+      <div class="section-header">
+        <div class="section-icon">🌐</div>
+        <h2>9. Third-Party Services</h2>
+      </div>
+      <p>Towus integrates with the following third-party services. Each has its own privacy policy:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Purpose</th>
+              <th>Privacy Policy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google Firebase (Auth, Firestore, Storage, Messaging, Functions)</td>
+              <td>Authentication, database, file storage, push notifications</td>
+              <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener" style="color:var(--accent-2)">firebase.google.com/support/privacy</a></td>
+            </tr>
+            <tr>
+              <td>Google Sign-In</td>
+              <td>Account authentication</td>
+              <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent-2)">policies.google.com/privacy</a></td>
+            </tr>
+            <tr>
+              <td>Google Fonts</td>
+              <td>Typefaces rendered in the App</td>
+              <td><a href="https://fonts.google.com/about" target="_blank" rel="noopener" style="color:var(--accent-2)">fonts.google.com/about</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We are not responsible for the privacy practices of these third parties and encourage you to review their policies.</p>
+    </section>
+
+    <!-- 10. Changes -->
+    <section id="changes" class="section">
+      <div class="section-header">
+        <div class="section-icon">📝</div>
+        <h2>10. Changes to This Policy</h2>
+      </div>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or new features. When we make significant changes, we will notify you through the App or by updating the "Last Updated" date at the top of this page.</p>
+      <p>We encourage you to review this policy periodically. Continued use of Towus after changes are posted constitutes your acceptance of the revised policy.</p>
+    </section>
+
+    <!-- 11. Contact -->
+    <section id="contact" class="section">
+      <div class="section-header">
+        <div class="section-icon">📬</div>
+        <h2>11. Contact Us</h2>
+      </div>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:</p>
+      <div class="contact-card">
+        <p><strong>App Name:</strong> Towus</p>
+        <p><strong>Developer:</strong> Towus Team</p>
+        <p><strong>Email:</strong> <a href="mailto:privacy@towus.app">privacy@towus.app</a></p>
+        <p><strong>Website:</strong> <a href="https://towus.app" target="_blank" rel="noopener">https://towus.app</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <p>© 2026 <span>Towus</span>. All rights reserved.</p>
+    <p style="margin-top:6px;">This policy is effective as of April 12, 2026.</p>
+  </footer>
+
+</body>
+</html>
