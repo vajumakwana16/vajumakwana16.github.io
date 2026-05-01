@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — BudgetBhaiya</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1a6b3c;
+    --green-mid: #2d9a5a;
+    --green-light: #e8f5ee;
+    --green-dark: #0f3d22;
+    --saffron: #e07b1a;
+    --saffron-light: #fef3e2;
+    --cream: #fafaf5;
+    --navy: #12213a;
+    --text: #1e2d1e;
+    --muted: #5a6b5a;
+    --border: #d8e8d8;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* Header */
+  header {
+    background: var(--green-dark);
+    padding: 48px 32px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '₹';
+    position: absolute;
+    font-family: 'Fraunces', serif;
+    font-size: 320px;
+    color: rgba(255,255,255,0.03);
+    right: -40px;
+    top: -60px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .app-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 999px;
+    padding: 6px 18px 6px 8px;
+    margin-bottom: 20px;
+  }
+
+  .app-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--green-mid);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    font-family: 'Fraunces', serif;
+  }
+
+  .app-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 0.3px;
+  }
+
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: #6ee0a0;
+  }
+
+  header p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    max-width: 480px;
+    margin: 0 auto 20px;
+  }
+
+  .header-meta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .meta-chip {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .meta-chip::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    flex-shrink: 0;
+  }
+
+  /* Layout */
+  .wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* Summary box */
+  .summary {
+    background: var(--green-light);
+    border: 1px solid #b8ddc8;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+  }
+
+  .summary-title {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .summary-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .summary-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .summary-dot svg {
+    width: 10px;
+    height: 10px;
+    fill: white;
+  }
+
+  .summary-text {
+    font-size: 13.5px;
+    color: var(--green-dark);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  /* TOC */
+  .toc {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+  }
+
+  .toc-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .toc-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 6px;
+  }
+
+  .toc-list a {
+    font-size: 13.5px;
+    color: var(--green);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 0;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+
+  .toc-list a:hover { color: var(--green-mid); }
+
+  .toc-list a::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 52px;
+    scroll-margin-top: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .section-num {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-mid);
+    background: var(--green-light);
+    border: 1px solid #c8e8d8;
+    border-radius: 6px;
+    padding: 4px 10px;
+    white-space: nowrap;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  .prose {
+    font-size: 15px;
+    color: #3a4a3a;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .prose + .prose { margin-top: -4px; }
+
+  /* Info boxes */
+  .box {
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .box-green {
+    background: var(--green-light);
+    border-left: 3px solid var(--green-mid);
+    color: var(--green-dark);
+  }
+
+  .box-saffron {
+    background: var(--saffron-light);
+    border-left: 3px solid var(--saffron);
+    color: #5a3200;
+  }
+
+  .box-navy {
+    background: #eef1f8;
+    border-left: 3px solid #3a5aad;
+    color: #1a2a5a;
+  }
+
+  .box strong { font-weight: 600; }
+
+  /* Data table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 20px 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .data-table th {
+    background: #f0f7f2;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .data-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid #f0f5f0;
+    color: #3a4a3a;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table td:first-child { font-weight: 600; color: var(--navy); }
+
+  .yes { color: var(--green-mid); font-weight: 600; }
+  .no { color: #c0392b; font-weight: 600; }
+  .na { color: var(--muted); }
+
+  /* List */
+  .policy-list {
+    list-style: none;
+    margin: 16px 0;
+    padding: 0;
+  }
+
+  .policy-list li {
+    font-size: 14.5px;
+    color: #3a4a3a;
+    line-height: 1.7;
+    padding: 8px 0 8px 24px;
+    position: relative;
+    border-bottom: 1px solid #f0f5f0;
+  }
+
+  .policy-list li:last-child { border-bottom: none; }
+
+  .policy-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--green-mid);
+    font-weight: 600;
+  }
+
+  /* Divider */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* Contact box */
+  .contact-box {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 32px;
+    color: white;
+    margin-top: 48px;
+  }
+
+  .contact-box h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: white;
+  }
+
+  .contact-box p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+
+  .contact-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 70px;
+    flex-shrink: 0;
+  }
+
+  .contact-val {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--green-dark);
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  footer strong { color: rgba(255,255,255,0.6); }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 30px; }
+    .wrapper { padding: 32px 16px 60px; }
+    .summary { padding: 20px; }
+    .toc { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="app-badge">
+    <div class="app-icon">₹</div>
+    <span class="app-name">BudgetBhaiya by Vaju Makwana</span>
+  </div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p>We believe your financial data belongs to you — and only you. Here's exactly what we do and don't do with it.</p>
+  <div class="header-meta">
+    <span class="meta-chip">Effective: January 1, 2025</span>
+    <span class="meta-chip">Last updated: January 1, 2025</span>
+    <span class="meta-chip">App version: 1.0.0+</span>
+  </div>
+</header>
+
+<!-- MAIN -->
+<div class="wrapper">
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    <div class="summary-title">🔒 The short version — our core promises</div>
+    <div class="summary-grid">
+      <div class="summary-item">
+        <div class="summary-dot">
+          <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="summary-text">Your SMS data is read on-device only — never sent to our servers</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-dot">
+          <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="summary-text">We never sell your data to any third party, ever</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-dot">
+          <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="summary-text">Free users' data stays 100% on their device — no cloud</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-dot">
+          <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="summary-text">You can delete all your data at any time, instantly</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-dot">
+          <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="summary-text">SMS permission is optional — app works without it</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-dot">
+          <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="summary-text">No ads tracking, no behavioural profiling</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#s1">1. Information We Collect</a></li>
+      <li><a href="#s2">2. SMS & Bank Data</a></li>
+      <li><a href="#s3">3. How We Use Your Data</a></li>
+      <li><a href="#s4">4. Data Storage & Security</a></li>
+      <li><a href="#s5">5. Third-Party Services</a></li>
+      <li><a href="#s6">6. Advertising (AdMob)</a></li>
+      <li><a href="#s7">7. Subscriptions & Payments</a></li>
+      <li><a href="#s8">8. Your Rights</a></li>
+      <li><a href="#s9">9. Children's Privacy</a></li>
+      <li><a href="#s10">10. Changes to Policy</a></li>
+      <li><a href="#s11">11. Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <span class="section-num">§ 01</span>
+      <h2 class="section-title">Information We Collect</h2>
+    </div>
+
+    <p class="prose">BudgetBhaiya collects only what is necessary to provide you with expense tracking and budgeting features. We do not collect any data beyond what is listed below.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Collected</th>
+          <th>Sent to Server</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SMS messages (bank/UPI only)</td>
+          <td class="yes">Yes*</td>
+          <td class="no">Never</td>
+          <td>Auto-detect UPI transactions</td>
+        </tr>
+        <tr>
+          <td>Transaction data you enter</td>
+          <td class="yes">Yes</td>
+          <td class="na">Pro only (backup)</td>
+          <td>Core app functionality</td>
+        </tr>
+        <tr>
+          <td>Monthly income / budget limits</td>
+          <td class="yes">Yes</td>
+          <td class="na">Pro only (backup)</td>
+          <td>Budget calculations</td>
+        </tr>
+        <tr>
+          <td>Device ID</td>
+          <td class="yes">Yes</td>
+          <td class="yes">AdMob only</td>
+          <td>Free-tier ads (opt-out available)</td>
+        </tr>
+        <tr>
+          <td>Crash logs / error reports</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Firebase Crashlytics</td>
+          <td>App stability improvements</td>
+        </tr>
+        <tr>
+          <td>App usage analytics</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Firebase Analytics</td>
+          <td>Understanding feature usage (anonymous)</td>
+        </tr>
+        <tr>
+          <td>Name / email / phone number</td>
+          <td class="no">No</td>
+          <td class="no">Never</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td class="no">No</td>
+          <td class="no">Never</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Contacts</td>
+          <td class="no">No</td>
+          <td class="no">Never</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Camera / microphone</td>
+          <td class="no">No</td>
+          <td class="no">Never</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="prose" style="font-size: 13px; color: var(--muted);">* SMS reading requires explicit permission grant. You can skip this permission and the app will work in manual entry mode.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <span class="section-num">§ 02</span>
+      <h2 class="section-title">SMS & Bank Data — Detailed</h2>
+    </div>
+
+    <p class="prose">This is the most sensitive aspect of our app, so we explain it in full detail.</p>
+
+    <div class="box box-green">
+      <strong>Core principle:</strong> BudgetBhaiya reads your SMS messages to detect UPI and bank transaction notifications. All SMS processing happens entirely on your device using local code. No SMS content — not even a single character — is ever transmitted to BudgetBhaiya's servers, Vaju Makwana, or any third party.
+    </div>
+
+    <p class="prose">When you grant the READ_SMS permission, BudgetBhaiya will:</p>
+
+    <ul class="policy-list">
+      <li>Read SMS messages only from known Indian bank and UPI sender IDs (e.g. AM-HDFCBK, AM-SBIINB, AM-ICICIB, GPAY, PHONEPE, etc.)</li>
+      <li>Extract only the transaction amount, merchant name, UPI reference number, and available balance from matching messages</li>
+      <li>Store the extracted transaction data locally on your device using encrypted local storage (Hive database)</li>
+      <li>Never read, store, or process personal SMS, OTPs, or messages from contacts</li>
+      <li>Never transmit any SMS content to any server or external service</li>
+      <li>Immediately discard the full SMS text after extracting transaction data — only the parsed fields are retained</li>
+    </ul>
+
+    <div class="box box-saffron">
+      <strong>OTP Safety:</strong> BudgetBhaiya explicitly filters out OTP SMS messages. We never read, store, display, or process any one-time passwords. Our sender ID allowlist ensures only bank transaction messages are ever processed.
+    </div>
+
+    <p class="prose">You may revoke SMS permission at any time from Android Settings → Apps → BudgetBhaiya → Permissions. The app will continue to work in manual entry mode after permission is revoked.</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <span class="section-num">§ 03</span>
+      <h2 class="section-title">How We Use Your Data</h2>
+    </div>
+
+    <p class="prose">We use your data only for the following purposes:</p>
+
+    <ul class="policy-list">
+      <li><strong>Transaction tracking:</strong> To log, categorize, and display your income and expenses within the app</li>
+      <li><strong>Budget calculations:</strong> To calculate spending against your set budget limits and savings goals</li>
+      <li><strong>Balance display:</strong> To show your last known bank balance parsed from bank SMS alerts</li>
+      <li><strong>Reminders:</strong> To send local notifications for upcoming EMI and bill due dates — no data leaves your device for this</li>
+      <li><strong>Cloud backup (Pro only):</strong> To securely back up your transaction data to Firebase Firestore so you can restore it if you change devices</li>
+      <li><strong>App improvement:</strong> Anonymous, aggregated analytics (e.g. "60% of users use the UPI parser") to improve features — no individual user data is analyzed</li>
+      <li><strong>Crash fixes:</strong> Crash reports via Firebase Crashlytics to identify and fix app bugs</li>
+    </ul>
+
+    <div class="box box-navy">
+      <strong>We do not use your data for:</strong> advertising targeting, selling to data brokers, training AI/ML models, behavioral profiling, or any purpose not listed above.
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <span class="section-num">§ 04</span>
+      <h2 class="section-title">Data Storage & Security</h2>
+    </div>
+
+    <p class="prose"><strong>Free users:</strong> All data is stored exclusively on your device using Hive, an encrypted local database. Nothing is sent to any server. Uninstalling the app permanently deletes all data.</p>
+
+    <p class="prose"><strong>Pro users:</strong> With cloud backup enabled, your complete app data is exported as a structured JSON file and securely stored in Firebase Firestore (Google Cloud, Mumbai region — asia-south1). This backup can be restored to any device you sign in to. Data is encrypted in transit using TLS 1.3 and at rest using AES-256 encryption.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Data Type</th><th>Free</th><th>Pro</th><th>Encryption</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Transaction data</td><td>Device only</td><td>Device + Firebase JSON</td><td>AES-256 (Hive) / TLS + AES (Firebase)</td></tr>
+        <tr><td>Budget &amp; income settings</td><td>Device only</td><td>Device + Firebase JSON</td><td>AES-256 / TLS</td></tr>
+        <tr><td>Savings goals</td><td>Device only</td><td>Device + Firebase JSON</td><td>AES-256 / TLS</td></tr>
+        <tr><td>EMI &amp; bill reminders</td><td>Device only</td><td>Device + Firebase JSON</td><td>AES-256 / TLS</td></tr>
+        <tr><td>Family budget data</td><td>Device only</td><td>Device + Firebase JSON</td><td>AES-256 / TLS</td></tr>
+        <tr><td>SMS parsed data</td><td>Device only</td><td>Device only</td><td>AES-256 (Hive) — never backed up</td></tr>
+        <tr><td>Bank balance data</td><td>Device only</td><td>Device only</td><td>AES-256 (Hive) — never backed up</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-green">
+      <strong>What the backup JSON contains:</strong> Your transactions, categories, budget limits, monthly income setting, savings goals, EMI schedules, and family budget slots. It does <em>not</em> contain any SMS content, raw bank messages, OTPs, or account numbers — only the transaction data you have confirmed inside the app.
+    </div>
+
+    <p class="prose"><strong>How backup works:</strong> When you tap "Backup Now" or when auto-backup runs (daily for Pro users), the app packages your data into a single JSON file and uploads it to your private Firestore document at <code>backups/{your_user_id}/data</code>. Only you can access this document — it is protected by Firebase Security Rules tied to your authenticated user ID.</p>
+
+    <p class="prose"><strong>Backup history:</strong> We keep your last 3 backup snapshots in Firestore under <code>backups/{your_user_id}/history/</code>. This means if a backup is accidentally corrupted, you can restore from an earlier point. History snapshots older than the 3 most recent are automatically deleted.</p>
+
+    <p class="prose"><strong>How restore works:</strong> When you sign in on a new device and tap "Restore Backup," the app downloads your JSON file from Firestore, clears local storage, and rebuilds your complete transaction history, goals, EMIs, and settings on the new device. SMS data and bank balances are not restored — they will be re-populated from your new device's SMS messages.</p>
+
+    <div class="box box-saffron">
+      <strong>Important:</strong> SMS messages, raw bank alert text, OTPs, and your actual bank account balance are <strong>never</strong> included in the cloud backup. These are read locally on your device only and are never uploaded to any server under any circumstances.
+    </div>
+
+    <p class="prose"><strong>Data retention:</strong> We retain your cloud backup for as long as you have an active Pro subscription plus 90 days after cancellation. After that, your Firestore document and all history snapshots are permanently and irreversibly deleted. You can also request immediate deletion at any time (see Section 8).</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <span class="section-num">§ 05</span>
+      <h2 class="section-title">Third-Party Services</h2>
+    </div>
+
+    <p class="prose">BudgetBhaiya uses the following third-party services. Each has their own privacy policy which we link below:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Service</th><th>Provider</th><th>Data Shared</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Firebase Crashlytics</td>
+          <td>Google LLC</td>
+          <td>Crash logs, device info, app version</td>
+          <td>Crash reporting and bug fixing</td>
+        </tr>
+        <tr>
+          <td>Firebase Analytics</td>
+          <td>Google LLC</td>
+          <td>Anonymous usage events</td>
+          <td>Understanding feature usage</td>
+        </tr>
+        <tr>
+          <td>Firebase Firestore</td>
+          <td>Google LLC</td>
+          <td>Encrypted transaction data (Pro only)</td>
+          <td>Cloud backup</td>
+        </tr>
+        <tr>
+          <td>Firebase Auth</td>
+          <td>Google LLC</td>
+          <td>Anonymous user ID (Pro only)</td>
+          <td>Identifying your cloud backup</td>
+        </tr>
+        <tr>
+          <td>Google AdMob</td>
+          <td>Google LLC</td>
+          <td>Device ID, ad interaction data</td>
+          <td>Displaying ads (free tier only)</td>
+        </tr>
+        <tr>
+          <td>RevenueCat</td>
+          <td>RevenueCat Inc.</td>
+          <td>Purchase receipt, subscription status</td>
+          <td>Managing Pro subscription</td>
+        </tr>
+        <tr>
+          <td>Google Play Billing</td>
+          <td>Google LLC</td>
+          <td>Payment processed by Google</td>
+          <td>In-app subscription purchase</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="prose">We do not integrate with any financial institutions, banks, or payment processors directly. We do not share your SMS data, transaction data, or balance data with any third-party service.</p>
+
+    <div class="box box-green">
+      <strong>Affiliate links:</strong> BudgetBhaiya may show suggestions for third-party financial products (mutual funds, insurance, FDs). Tapping these links takes you to the third party's website or app. We receive a referral commission if you sign up. We never share your BudgetBhaiya data with these affiliates — they only know you clicked a link.
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <span class="section-num">§ 06</span>
+      <h2 class="section-title">Advertising (AdMob)</h2>
+    </div>
+
+    <p class="prose">The free tier of BudgetBhaiya displays banner advertisements powered by Google AdMob. The following applies to ads:</p>
+
+    <ul class="policy-list">
+      <li>Ads are displayed only at the bottom of the dashboard screen — never between transactions or as interstitials</li>
+      <li>Google AdMob may use your device's advertising ID to show relevant ads</li>
+      <li>BudgetBhaiya does NOT share your financial data, transaction history, SMS data, or income with AdMob</li>
+      <li>You can reset or opt out of personalized ads in Android Settings → Google → Ads</li>
+      <li>Pro subscribers see zero ads — advertisements are completely removed</li>
+    </ul>
+
+    <p class="prose">For more information on how Google uses data in its advertising products, see <strong>google.com/policies/privacy/partners</strong></p>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <span class="section-num">§ 07</span>
+      <h2 class="section-title">Subscriptions & Payments</h2>
+    </div>
+
+    <p class="prose">BudgetBhaiya Pro subscriptions are processed entirely through Google Play Billing. Vaju Makwana never sees, stores, or processes your payment card information.</p>
+
+    <ul class="policy-list">
+      <li>All payment processing is handled by Google — we receive only a confirmation of successful purchase</li>
+      <li>RevenueCat manages subscription status on our behalf — it receives your Google Play purchase receipt only</li>
+      <li>Subscription auto-renews unless cancelled at least 24 hours before the renewal date</li>
+      <li>To cancel: Google Play Store → Subscriptions → BudgetBhaiya Pro → Cancel</li>
+      <li>Refund requests are handled per Google Play's refund policy</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <span class="section-num">§ 08</span>
+      <h2 class="section-title">Your Rights</h2>
+    </div>
+
+    <p class="prose">You have full control over your data at all times:</p>
+
+    <ul class="policy-list">
+      <li><strong>Access:</strong> All your data is visible within the app at any time. Pro users can export it as CSV from Settings → Export Data</li>
+      <li><strong>Delete local data:</strong> Settings → Danger Zone → Delete All Data. This immediately and permanently wipes all transactions, settings, and SMS-parsed data from your device</li>
+      <li><strong>Delete cloud data (Pro):</strong> Settings → Account → Delete Cloud Backup. Data is removed from Firebase within 24 hours</li>
+      <li><strong>Revoke SMS permission:</strong> Android Settings → Apps → BudgetBhaiya → Permissions → SMS → Deny. App continues working in manual mode</li>
+      <li><strong>Opt out of analytics:</strong> Settings → Privacy → Disable Analytics. No usage data will be sent</li>
+      <li><strong>Uninstall:</strong> Uninstalling the app permanently deletes all local data. Cloud data is deleted within 90 days</li>
+      <li><strong>Data portability:</strong> Export your full transaction history as a CSV file from Settings at any time</li>
+    </ul>
+
+    <p class="prose">To request deletion of any server-side data (crash logs, analytics, cloud backup), email us at the address in Section 11. We will respond within 7 business days and complete deletion within 30 days.</p>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <span class="section-num">§ 09</span>
+      <h2 class="section-title">Children's Privacy</h2>
+    </div>
+
+    <p class="prose">BudgetBhaiya is intended for users who are 18 years of age or older. We do not knowingly collect any information from children under 18.</p>
+
+    <p class="prose">If you believe a child under 18 has provided us with personal data, please contact us at the email in Section 11 and we will delete it immediately.</p>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <span class="section-num">§ 10</span>
+      <h2 class="section-title">Changes to This Policy</h2>
+    </div>
+
+    <p class="prose">We may update this Privacy Policy from time to time. When we do:</p>
+
+    <ul class="policy-list">
+      <li>We will update the "Last updated" date at the top of this page</li>
+      <li>For material changes, we will notify you with an in-app notice at least 7 days before the change takes effect</li>
+      <li>Continued use of the app after the effective date constitutes acceptance of the updated policy</li>
+      <li>If you do not agree with changes, you may delete your data and uninstall the app</li>
+    </ul>
+
+    <p class="prose">Previous versions of this policy are available on request by emailing us.</p>
+  </div>
+
+  <!-- SECTION 11 -->
+  <div class="section" id="s11">
+    <div class="section-header">
+      <span class="section-num">§ 11</span>
+      <h2 class="section-title">Contact Us</h2>
+    </div>
+
+    <p class="prose">If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please reach out:</p>
+
+    <div class="contact-box">
+      <h3>Vaju Makwana</h3>
+      <p>We're a small indie studio based in Jamnagar, Gujarat, India. We take privacy seriously and respond to every query personally — no bots, no templates.</p>
+      <div class="contact-row">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-val">privacy@vajumakwana.dev</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Support</span>
+          <span class="contact-val">support@vajumakwana.dev</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Address</span>
+          <span class="contact-val">Jamnagar, Gujarat, India — 361001</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Response</span>
+          <span class="contact-val">Within 7 business days</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <p style="font-size: 13px; color: var(--muted); text-align: center; line-height: 1.8;">
+    This Privacy Policy was written for <strong>BudgetBhaiya</strong> by <strong>Vaju Makwana</strong>.<br>
+    Package: com.vajumakwana.budgetbhaiya · Governed by the laws of India · Jurisdiction: Gujarat, India
+  </p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>BudgetBhaiya</strong> · Vaju Makwana · Jamnagar, Gujarat, India<br>
+  Apna paisa, apna hisaab — aur apna data bhi apna 🔒
+</footer>
+
+</body>
+</html>
