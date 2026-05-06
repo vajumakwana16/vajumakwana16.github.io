@@ -3,573 +3,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaju Makwana - Flutter & Android Engineer | 4+ Years Experience</title>
-    <meta name="description" content="Flutter and Android engineer with 4+ years of experience building cross-platform applications. Specializes in mentoring developers and delivering production-ready apps.">
-    <meta name="keywords" content="Flutter Developer, Android Developer, Mobile App Developer, Dart, Firebase, Cross-Platform">
+    <title>Vaju Makwana - Flutter & Android Engineer</title>
+    <meta name="description"
+        content="Flutter and Android engineer with 4+ years of experience building cross-platform applications.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading" id="loading"><div class="spinner"></div></div>
+    <div id="scroll-progress"
+        style="position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: var(--accent); z-index: 2000; transition: width 0.1s;">
+    </div>
 
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="assets/assets/images/512.png" alt="Logo" class="logo-img">
-                <span class="logo-text">VM</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <nav class="navbar">
+        <div class="logo condensed" style="font-size: 1.2rem; font-weight: 900;">VM</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="mailto:vajumakwana16@gmail.com" class="nav-cta">Hire Me</a>
-            <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <a href="Vaju_Makwana_Resume.pdf" download class="tag" style="background: transparent; color: var(--text-primary); border: 1px solid var(--border-color); text-decoration: none;">Resume ↓</a>
+            <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="sun-icon" style="display: none;">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            </button>
+            <a href="mailto:vajumakwana16@gmail.com" class="tag"
+                style="background: var(--accent); color: white; text-decoration: none;">Hire Me</a>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-glow"></div>
-        <div class="hero-glow-2"></div>
-        <div class="hero-container">
-            <div class="hero-content">
-
-                <h1 class="hero-title">
-                    <span class="greeting">Hi, I'm</span>
-                    <span class="hero-title-main">Vaju Makwana</span>
-                    <span class="hero-role">
-                        <span class="role-text">Flutter & Android Engineer</span>
-                        <span class="cursor">|</span>
-                    </span>
-                </h1>
-                <p class="hero-description">
-                    <strong>4+ years</strong> of experience building cross-platform applications, 
-                    architecting Restaurant POS systems, and mentoring junior developers. 
-                    Improved rendering performance by <strong>40%</strong> and deployed across <strong>20+ outlets</strong>.
+        <div class="hero-bg-text condensed">BUILDER</div>
+        <div class="hero-content" style="display: flex; align-items: center; justify-content: space-between; text-align: left; gap: 4rem;">
+            <div style="flex: 1;">
+                <div class="available-pill">
+                    <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: inline-block;"></span>
+                    Available for work
+                </div>
+                <h1 class="text-large condensed" style="margin-bottom: 2rem;">FLUTTER <br>& <span class="text-accent">ANDROID</span><br>ENGINEER</h1>
+                <p class="hero-title" style="max-width: 500px; margin-bottom: 2.5rem; line-height: 1.8;">
+                    Crafting premium mobile experiences with 4+ years of expertise. Specializing in high-performance cross-platform solutions.
                 </p>
-                <div class="hero-stats">
-                    <div class="hero-stat-item">
-                        <span class="hero-stat-number">4+</span>
-                        <span class="hero-stat-label">Years Exp.</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="hero-stat-item">
-                        <span class="hero-stat-number">40%</span>
-                        <span class="hero-stat-label">Perf. Boost</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="hero-stat-item">
-                        <span class="hero-stat-number">20+</span>
-                        <span class="hero-stat-label">Outlets Deployed</span>
-                    </div>
-                </div>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        View Projects
-                    </a>
-                    <a href="mailto:vajumakwana16@gmail.com" class="btn btn-secondary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        Get In Touch
-                    </a>
-                </div>
-                <div class="hero-social">
-                    <a href="https://www.linkedin.com/in/vajumakwana16" target="_blank" class="social-icon" title="LinkedIn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
-                    <a href="https://github.com/vajumakwana16" target="_blank" class="social-icon" title="GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    </a>
-                    <a href="mailto:vajumakwana16@gmail.com" class="social-icon" title="Email">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    </a>
-                    <a href="tel:+919537962565" class="social-icon" title="Phone">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    </a>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#projects" class="btn-accent">VIEW WORKS</a>
+                    <a href="Vaju_Makwana_Resume.pdf" download class="btn-accent" style="background: transparent; border: 1px solid var(--accent); color: var(--accent);">DOWNLOAD CV</a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="profile-card">
-                    <div class="card-shine"></div>
-                    <div class="profile-image-container">
-                        <div class="profile-ring"></div>
-                        <img src="assets/assets/images/512.png" class="profile-image" alt="Vaju Makwana">
-                    </div>
-                    <div class="profile-info">
-                        <h3 class="profile-name">Vaju Makwana</h3>
-                        <p class="profile-title">Mobile App Developer (Flutter/Android)</p>
-                    </div>
-                    <div class="tech-badges">
-                        <span class="tech-badge flutter-badge">Flutter</span>
-                        <span class="tech-badge">Android</span>
-                        <span class="tech-badge">Firebase</span>
-                        <span class="tech-badge">iOS</span>
-                    </div>
-                </div>
+            <div class="portrait-container" style="flex: 0 0 400px; height: 500px; margin: 0;">
+                <div class="hi-badge">HI!</div>
+                <img src="assets/assets/images/512.png" alt="Vaju Makwana" class="portrait-img" style="border-radius: 80px;">
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <span class="scroll-text">Scroll Down</span>
-            <div class="scroll-arrow"><span></span><span></span></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">About</span>
-                <h2 class="section-title">Professional Summary</h2>
-            </div>
-            <div class="about-content">
-                <div>
-                    <p class="about-text">
-                        Flutter and Android engineer with <strong>4+ years</strong> of experience building cross-platform applications, 
-                        specializing in mentoring junior developers and owning features end-to-end, from initial design to production release.
-                    </p>
-                    <p class="about-text">
-                        At Smart Webtech, I improved rendering performance by <strong>40%</strong> through widget optimization, lazy loading, 
-                        and efficient state management. I architected a Restaurant POS System in Flutter with thermal printer connectivity 
-                        (USB, Wi-Fi, Bluetooth) using ESC/POS commands, deployed across <strong>20+ restaurant outlets</strong>.
-                    </p>
-                    <p class="about-text">
-                        I have mentored <strong>3 junior developers</strong>, guiding them through Flutter fundamentals and accelerating 
-                        their onboarding to production-level development. I also built native Android apps in Java (MVC) with Firebase Realtime DB 
-                        and integrated Razorpay & Paytm gateways, improving transaction success by <strong>25%</strong>.
-                    </p>
+    <section class="container" id="about">
+        <div class="fade-up">
+            <span class="section-tag">WHO AM I</span>
+            <h2 class="section-title">A specialized developer building for the <span class="text-accent">future</span> of
+                mobile.</h2>
+            <div style="max-width: 800px;">
+                <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    Specialize in clean architecture, state management (BLoC/Provider), Firebase integration, and API-driven
+                    development.
+                    My goal is to craft apps that combine smooth performance, beautiful UI, and solid scalability.
+                </p>
+                <p style="color: var(--text-secondary);">
+                    I’ve delivered multiple projects, including POS systems, habit & task management apps, AI-integrated tools, and
+                    casual games —
+                    published on the Play Store and App Store.
+                </p>
+                <div style="margin-top: 3rem; transform: scale(0.9); transform-origin: left;">
+                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light"
+                        data-type="HORIZONTAL" data-vanity="vajumakwana16" data-version="v1"><a class="badge-base__link LI-simple-link"
+                            href="https://in.linkedin.com/in/vajumakwana16?trk=profile-badge">Vaju Makwana</a></div>
                 </div>
-                <div class="about-highlights">
-                    <div class="highlight-item">
-                        <span class="highlight-number">40%</span>
-                        <span class="highlight-label">Performance Improvement</span>
+                </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="condensed">4+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="condensed">40%</h3>
+                    <p>Bug Reduction</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="condensed">30%</h3>
+                    <p>Performance Boost</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="condensed">4.6</h3>
+                    <p>Store Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Stacking Effect) -->
+    <section class="container" id="projects">
+        <div class="fade-up">
+            <span class="section-tag">SELECTED WORKS</span>
+            <h2 class="section-title">Digital <span class="text-accent">Products</span></h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div style="display: flex; height: 100%; flex-wrap: wrap;">
+                        <div class="project-image-wrap"
+                            style="flex: 1.2; min-width: 300px; background: #000;">
+                            <img src="assets/images/p1.png" alt="Global POS Solution" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-info"
+                            style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="project-tags">
+                                <span class="tag">FLUTTER</span>
+                                <span class="tag">RETAIL</span>
+                            </div>
+                            <h3 class="condensed" style="font-size: 2.5rem;">Global POS Solution</h3>
+                            <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 1.1rem;">
+                                Architected a specialized POS platform for international restaurant chains. Optimized widget rebuilds and implemented lazy loading for
+                                seamless performance across platforms.
+                            </p>
+                            <div style="margin-top: 2rem;">
+                                <span class="text-accent" style="font-weight: 700;">45% COLD-START REDUCTION</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="highlight-item">
-                        <span class="highlight-number">20+</span>
-                        <span class="highlight-label">Restaurant Outlets</span>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div style="display: flex; height: 100%; flex-wrap: wrap; flex-direction: row-reverse;">
+                        <div class="project-image-wrap" style="flex: 1.2; min-width: 300px; background: #000;">
+                            <img src="assets/images/p2.png" alt="Scale-Ready Delivery" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-info"
+                            style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="project-tags">
+                                <span class="tag">JAVA</span>
+                                <span class="tag">ANDROID</span>
+                            </div>
+                            <h3 class="condensed" style="font-size: 2.5rem;">Scale-Ready Delivery</h3>
+                            <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 1.1rem;">
+                                Full-featured delivery platform scaling to 10K+ users. Resolved critical payment gateway synchronization issues in production environments.
+                            </p>
+                            <div style="margin-top: 2rem;">
+                                <span class="text-accent" style="font-weight: 700;">4.6 RATING | 10K+ USERS</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="highlight-item">
-                        <span class="highlight-number">3</span>
-                        <span class="highlight-label">Developers Mentored</span>
+                </div>
+
+                <!-- Project 3: WalletX -->
+                <div class="project-card">
+                    <div style="display: flex; height: 100%; flex-wrap: wrap;">
+                        <div class="project-image-wrap"
+                            style="flex: 1.2; min-width: 300px; background: #000;">
+                            <img src="assets/images/p3.png" alt="WalletX" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-info"
+                            style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="project-tags">
+                                <span class="tag">FINTECH</span>
+                                <span class="tag">FLUTTER</span>
+                            </div>
+                            <h3 class="condensed" style="font-size: 2.5rem;">WalletX : Money Manager</h3>
+                            <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 1.1rem;">
+                                Premium finance tracker with glassmorphic UI. Features automated SMS synchronization for transaction tracking and advanced category analytics.
+                            </p>
+                            <div style="margin-top: 2rem;">
+                                <span class="text-accent" style="font-weight: 700;">DARK/LIGHT MODE | SMS SYNC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: AudioConnect -->
+                <div class="project-card">
+                    <div style="display: flex; height: 100%; flex-wrap: wrap; flex-direction: row-reverse;">
+                        <div class="project-image-wrap"
+                            style="flex: 1.2; min-width: 300px; background: #000;">
+                            <img src="assets/images/p4.png" alt="AudioConnect" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-info"
+                            style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="project-tags">
+                                <span class="tag">UTILITY</span>
+                                <span class="tag">NETWORKING</span>
+                            </div>
+                            <h3 class="condensed" style="font-size: 2.5rem;">AudioConnect – PC Bridge</h3>
+                            <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 1.1rem;">
+                                Wireless audio bridge utility. Streams PC audio to Android and enables phone mic as PC input over Wi-Fi with sub-50ms latency tracking.
+                            </p>
+                            <div style="margin-top: 2rem;">
+                                <span class="text-accent" style="font-weight: 700;">LOW-LATENCY | WI-FI MIC</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="linkedin-badge-wrap">
-                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark"
-                    data-type="HORIZONTAL" data-vanity="vajumakwana16" data-version="v1"><a class="badge-base__link LI-simple-link"
-                        href="https://in.linkedin.com/in/vajumakwana16?trk=profile-badge">Vaju Makwana</a></div>
+        </div>
+    </section>
+
+    <!-- Skills Section (Flipping Effect) -->
+    <section class="container" id="skills">
+        <div class="fade-up">
+            <span class="section-tag">EXPERTISE</span>
+            <h2 class="section-title">Technical <span class="text-accent">Arsenal</span></h2>
+            <div class="skills-grid">
+                <!-- Skill 1 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3 class="condensed">Mobile</h3>
+                            <p style="color: var(--accent); font-weight: 700;">Flutter & Android</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Dart, BLoC, Provider, Java, MVC, Material UI</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 2 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3 class="condensed">Backend</h3>
+                            <p style="color: var(--accent); font-weight: 700;">Firebase & APIs</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Firestore, Auth, REST APIs, PHP, MySQL, Node.js</p>
+                        </div>
+                        </div>
+                </div>
+                <!-- Skill 3 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3 class="condensed">Tools</h3>
+                            <p style="color: var(--accent); font-weight: 700;">DevOps & More</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Git, Postman, Play Console, App Store Connect, CI/CD</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Career</span>
-                <h2 class="section-title">Work Experience</h2>
-            </div>
-            <div class="experience-timeline">
-                <div class="timeline-line"></div>
-                <div class="timeline-item">
-                    <div class="timeline-dot">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+    <section class="container" id="experience">
+        <div class="fade-up">
+            <span class="section-tag">JOURNEY</span>
+            <h2 class="section-title">Work <span class="text-accent">Experience</span></h2>
+    
+            <div style="border-left: 2px solid var(--border-color); padding-left: 3rem; position: relative;">
+                <!-- Role 1 -->
+                <div style="margin-bottom: 4rem; position: relative;">
+                    <div
+                        style="position: absolute; left: -3.65rem; top: 0; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; border: 4px solid var(--bg-primary);">
                     </div>
-                    <div class="timeline-card">
-                        <div class="job-header">
-                            <div>
-                                <h3 class="job-title">Mobile App Developer - (Flutter/Android)</h3>
-                                <p class="company-name">Smart Webtech, Jamnagar, IN</p>
-                            </div>
-                            <div class="job-duration">April 2022 - Present</div>
-                        </div>
-                        <ul class="job-achievements">
-                            <li>Improved rendering performance by <strong>40%</strong> through widget optimization, lazy loading, and efficient state management techniques</li>
-                            <li>Architected a Restaurant POS System in Flutter with thermal printer connectivity (USB, Wi-Fi, Bluetooth) using ESC/POS commands, enabling real-time receipt and kitchen printing across Android and iOS+</li>
-                            <li>Deployed across <strong>20+ restaurant outlets</strong></li>
-                            <li>Mentored <strong>3 junior developers</strong>, guiding them through Flutter fundamentals and accelerating their onboarding to production-level development</li>
-                            <li>Built native Android apps in Java (MVC) with Firebase Realtime DB & Cloud Firestore</li>
-                            <li>Integrated Razorpay & Paytm gateways, improving transaction success by <strong>25%</strong></li>
-                        </ul>
-                        <div class="job-skills">
-                            <span class="skill-tag">Flutter</span>
-                            <span class="skill-tag">Dart</span>
-                            <span class="skill-tag">Android</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Firebase</span>
-                            <span class="skill-tag">ESC/POS</span>
-                            <span class="skill-tag">Razorpay</span>
-                        </div>
+                    <span class="tag" style="margin-bottom: 1rem; display: inline-block;">JULY 2022 - PRESENT</span>
+                    <h3 class="condensed">Flutter Developer</h3>
+                    <p style="font-weight: 600; margin-bottom: 1rem;">Smart Webtech, Jamnagar (Full-time)</p>
+                    <ul style="color: var(--text-secondary); list-style: none;">
+                        <li>• Reduced app bugs by 40% through systematic code refactoring.</li>
+                        <li>• Improved performance by 30% via widget optimization and lazy loading.</li>
+                        <li>• Mentored junior developers and led feature releases.</li>
+                    </ul>
+                </div>
+                <!-- Role 2 -->
+                <div style="margin-bottom: 4rem; position: relative;">
+                    <div
+                        style="position: absolute; left: -3.65rem; top: 0; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; border: 4px solid var(--bg-primary);">
                     </div>
+                    <span class="tag" style="margin-bottom: 1rem; display: inline-block;">APRIL 2022 - JULY 2022</span>
+                    <h3 class="condensed">Android Developer</h3>
+                    <p style="font-weight: 600; margin-bottom: 1rem;">Smart Webtech</p>
+                    <ul style="color: var(--text-secondary); list-style: none;">
+                        <li>• Developed native Android apps using Java (MVC).</li>
+                        <li>• Fixed critical payment gateway issues, improving transaction success.</li>
+                    </ul>
+                </div>
+                <!-- Role 3 -->
+                <div style="margin-bottom: 4rem; position: relative;">
+                    <div
+                        style="position: absolute; left: -3.65rem; top: 0; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; border: 4px solid var(--bg-primary);">
+                    </div>
+                    <span class="tag" style="margin-bottom: 1rem; display: inline-block;">DEC 2021 - APRIL 2022</span>
+                    <h3 class="condensed">PHP Developer</h3>
+                    <p style="font-weight: 600; margin-bottom: 1rem;">Smart Webtech (On-site)</p>
+                    <ul style="color: var(--text-secondary); list-style: none;">
+                        <li>• Web development using PHP, Ajax, jQuery, and MySQL.</li>
+                        <li>• Focused on creating scalable RESTful APIs.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Work</span>
-                <h2 class="section-title">Key Projects</h2>
-                <p class="section-subtitle">Production applications demonstrating cross-platform expertise and real-world impact</p>
-            </div>
-            <div class="projects-grid">
-
-                <!-- La-Cuneta TPV -->
-                <div class="project-card featured">
-                    <div class="project-ribbon">Live App</div>
-                    <div class="project-image app-gradient-pdf">
-                        <div class="app-icon-display">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        </div>
-                        <div class="app-icon-bg"></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">La-Cuneta TPV</h3>
-                            <div class="project-status">Live</div>
-                        </div>
-                        <p class="project-description">
-                            POS platform for Spanish restaurant chains from a single Flutter code-base targeting 3 platforms: Android, iOS, and web. 
-                            Built dynamic menu management, table reservation, and staff shift modules. Integrated multi-printer kitchen/bar order routing 
-                            and reduced cold-start time by 45% through deferred init and asset pre-caching.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Cross-Platform</span>
-                            <span class="tech-tag">Android</span>
-                            <span class="tech-tag">iOS</span>
-                            <span class="tech-tag">Web</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hotel Aram -->
-                <div class="project-card">
-                    <div class="project-image app-gradient-neon">
-                        <div class="app-icon-display">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                        </div>
-                        <div class="app-icon-bg"></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Hotel Aram</h3>
-                            <div class="project-status">Live</div>
-                        </div>
-                        <p class="project-description">
-                            Full-featured food delivery app scaling to 10K+ users with a 4.6 Play Store rating. Built loyalty rewards engine 
-                            with redeemable points, live order tracking, and multi-gateway payments (COD, Paytm, Razorpay). Added real-time FCM push notifications.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Android</span>
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Razorpay</span>
-                            <span class="tech-tag">Paytm</span>
-                        </div>
-                        <div class="project-metric">
-                            <span class="metric-value">4.6</span>
-                            <span class="metric-label">Play Store Rating | 10K+ Users</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ink -->
-                <div class="project-card">
-                    <div class="project-image app-gradient-focus">
-                        <div class="app-icon-display">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-                        </div>
-                        <div class="app-icon-bg"></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Ink - Tattoo Artist Discovery</h3>
-                            <div class="project-status">Live</div>
-                        </div>
-                        <p class="project-description">
-                            Tattoo artist discovery platform for Israel market with 1K+ downloads and perfect 5.0 rating. 
-                            Implemented style-based search filters, location-based discovery, and artist portfolio browsing. 
-                            Built booking system with application forms and folder functionality for saving favorite designs.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Cross-Platform</span>
-                            <span class="tech-tag">Android</span>
-                            <span class="tech-tag">iOS</span>
-                        </div>
-                        <div class="project-metric">
-                            <span class="metric-value">5.0</span>
-                            <span class="metric-label">Perfect Rating | 1K+ Downloads</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AudioConnect -->
-                <div class="project-card">
-                    <div class="project-image app-gradient-qr">
-                        <div class="app-icon-display">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                        </div>
-                        <div class="app-icon-bg"></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">AudioConnect - Wireless Audio Streaming</h3>
-                            <div class="project-status status-github">GitHub</div>
-                        </div>
-                        <p class="project-description">
-                            Cross-platform app streaming PC audio to Android and syncing over Wi-Fi, transforming smartphones into wireless audio receivers. 
-                            Achieved sub-50ms end-to-end latency via custom UDP socket pipeline and adaptive jitter-buffer management.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Wi-Fi Networking</span>
-                            <span class="tech-tag">UDP Sockets</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Expertise</span>
-                <h2 class="section-title">Technical Skills</h2>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-icon-svg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-                    <h3 class="skill-title">Languages</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Dart</span><span class="skill-item">Java</span><span class="skill-item">C++</span>
-                        <span class="skill-item">Swift</span><span class="skill-item">MySQL</span><span class="skill-item">JavaScript</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon-svg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-                    <h3 class="skill-title">Frameworks</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Flutter</span><span class="skill-item">Android SDK</span>
-                        <span class="skill-item">Firebase</span><span class="skill-item">Material-UI</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon-svg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-                    <h3 class="skill-title">Architecture & Process</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">MVC</span><span class="skill-item">Clean Architecture</span>
-                        <span class="skill-item">REST API</span><span class="skill-item">CI/CD</span><span class="skill-item">Agile Scrum</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon-svg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-                    <h3 class="skill-title">Tools</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Android Studio</span><span class="skill-item">VS Code</span>
-                        <span class="skill-item">Firebase Console</span><span class="skill-item">Postman</span>
-                        <span class="skill-item">GitHub Copilot</span><span class="skill-item">Xcode</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon-svg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-                    <h3 class="skill-title">Libraries</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Flutter Bloc</span><span class="skill-item">Provider</span>
-                        <span class="skill-item">Riverpod</span><span class="skill-item">Dio</span>
-                        <span class="skill-item">Retrofit</span><span class="skill-item">Volley</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="education" id="education">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Background</span>
-                <h2 class="section-title">Education & Recognition</h2>
-            </div>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="edu-icon-wrap">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
-                    </div>
-                    <h3 class="degree-title">Bachelor of Engineering</h3>
-                    <p class="institution">B. H. Gardi College of Engineering & Technology, Rajkot</p>
-                    <p class="edu-field">Computer Engineering</p>
-                    <p class="duration">Graduated Jan 2024 | CGPA: 7.37/10</p>
-                </div>
-                <div class="education-card">
-                    <div class="edu-icon-wrap">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                    </div>
-                    <h3 class="degree-title">Diploma in Computer Engineering</h3>
-                    <p class="institution">Government Polytechnic Jamnagar</p>
-                    <p class="edu-field">Computer Engineering</p>
-                    <p class="duration">Graduated Jan 2021 | CGPA: 7.43/10</p>
-                </div>
-            </div>
-            <!-- Award -->
-            <div class="award-card">
-                <div class="award-icon-wrap">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-                </div>
-                <h3 class="award-title">Ascending Star Award</h3>
-                <p class="award-desc">Recognized for outstanding performance, exceptional code quality, and significant contributions at Smart Webtech.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Connect</span>
-                <h2 class="section-title">Let's Work Together</h2>
-                <p class="section-subtitle">Ready to bring your mobile app ideas to life? Let's discuss your project.</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon-wrap">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <a href="mailto:vajumakwana16@gmail.com">vajumakwana16@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon-wrap">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <a href="tel:+919537962565">+91 9537962565</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon-wrap">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>Jamnagar, Gujarat, India</p>
-                        </div>
-                    </div>
-                    <div class="contact-links-box">
-                        <h4>Find me on</h4>
-                        <div class="contact-link-items">
-                            <a href="https://www.linkedin.com/in/vajumakwana16" target="_blank" class="clink">LinkedIn</a>
-                            <a href="https://github.com/vajumakwana16" target="_blank" class="clink">GitHub</a>
-                            <a href="https://play.google.com/store/apps/dev?id=5929597072015420935" target="_blank" class="clink">Play Store</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-wrap">
-                    <h3>Send me a message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                    </form>
-                </div>
+    <!-- Contact CTA -->
+    <section class="container">
+        <div class="contact-section fade-up" id="contact" style="padding: 6rem 2rem;">
+            <span class="section-tag" style="color: white; opacity: 0.6;">GET IN TOUCH</span>
+            <h2 class="section-title">Ready to build <br>something <span class="text-accent">incredible</span>?</h2>
+            <a href="mailto:vajumakwana16@gmail.com" class="btn-accent">START A PROJECT</a>
+    
+            <div style="margin-top: 4rem; display: flex; justify-content: center; gap: 2rem;">
+                <a href="https://www.linkedin.com/in/vajumakwana16" target="_blank"
+                    style="color: white; text-decoration: none; font-weight: 600;">LINKEDIN</a>
+                <a href="https://github.com/vajumakwana16" target="_blank"
+                    style="color: white; text-decoration: none; font-weight: 600;">GITHUB</a>
+                <a href="mailto:vajumakwana16@gmail.com"
+                    style="color: white; text-decoration: none; font-weight: 600;">EMAIL</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/vajumakwana16" target="_blank" class="footer-slink" title="LinkedIn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-                <a href="https://github.com/vajumakwana16" target="_blank" class="footer-slink" title="GitHub">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-                <a href="mailto:vajumakwana16@gmail.com" class="footer-slink" title="Email">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                </a>
-            </div>
-            <p class="footer-text">&copy; 2025 <strong>Vaju Makwana</strong>. All rights reserved.</p>
-            <p class="footer-sub">Flutter & Android Engineer | Jamnagar, India</p>
-        </div>
+        <p>© 2025 VAJU MAKWANA. ALL RIGHTS RESERVED.</p>
     </footer>
 
     <script>
-        window.addEventListener('load', function() {
-            setTimeout(() => document.getElementById('loading').classList.add('hide'), 800);
+            // Scroll Progress Bar
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("scroll-progress").style.width = scrolled + "%";
         });
 
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuToggle.addEventListener('click', () => { menuToggle.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
-        document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', () => { menuToggle.classList.remove('active'); mobileMenu.classList.remove('active'); }));
-        document.addEventListener('click', e => { if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) { menuToggle.classList.remove('active'); mobileMenu.classList.remove('active'); } });
+    // Mouse move effect for portrait
+    const portrait = document.querySelector('.portrait-container');
+    if (portrait) {
+        document.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+            const x = (clientX / innerWidth - 0.5) * 20;
+            const y = (clientY / innerHeight - 0.5) * 20;
+            portrait.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    }
 
-        window.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 80);
+            // Intersection Observer for fade-up and flip animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+        }, observerOptions);
+
+            document.querySelectorAll('.fade-up, .project-card, .flip-card').forEach(el => observer.observe(el));
+
+            // Theme Toggle Logic
+            const themeToggle = document.getElementById('theme-toggle');
+            const sunIcon = document.querySelector('.sun-icon');
+            const moonIcon = document.querySelector('.moon-icon');
+            const html = document.documentElement;
+
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', savedTheme);
+            updateIcons(savedTheme);
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateIcons(newTheme);
         });
 
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+            function updateIcons(theme) {
+                if (theme === 'dark') {
+                    sunIcon.style.display = 'block';
+                    moonIcon.style.display = 'none';
+                } else {
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'block';
+                }
+            }
+
+            // Smooth scroll for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const n = document.getElementById('name').value, em = document.getElementById('email').value, s = document.getElementById('subject').value, m = document.getElementById('message').value;
-            window.location.href = `mailto:vajumakwana16@gmail.com?subject=${encodeURIComponent(s)}&body=${encodeURIComponent(`Hi Vaju,\n\nMy name is ${n} (${em})\n\n${m}\n\nBest regards,\n${n}`)}`;
-            this.reset();
-        });
-
-        const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-        document.querySelectorAll('section').forEach(s => { s.classList.add('fade-up'); obs.observe(s); });
-
-        setTimeout(() => { const h = document.querySelector('.hero-title-main'); if (h) { const t = 'Vaju Makwana'; h.innerHTML = ''; let i = 0; (function type() { if (i < t.length) { h.innerHTML += t.charAt(i); i++; setTimeout(type, 120); } })(); } }, 1200);
     </script>
 </body>
 </html>
