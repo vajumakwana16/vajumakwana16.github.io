@@ -168,6 +168,7 @@ body {
 .highlight-item:hover { transform: translateY(-3px); border-color: rgba(2,125,253,0.2); }
 .highlight-number { font-size: 1.8rem; font-weight: 700; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; font-family: 'Space Grotesk', sans-serif; }
 .highlight-label { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem; display: block; }
+.linkedin-badge-wrap { margin-top: 3rem; display: flex; justify-content: center; width: 100%; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 3rem; }
 
 /* ---- Experience ---- */
 .experience { padding: 6rem 0; background: var(--bg-dark); }
