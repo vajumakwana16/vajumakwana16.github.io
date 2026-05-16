@@ -1,429 +1,555 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaju Makwana - Flutter & Android Engineer</title>
-    <meta name="description"
-        content="Flutter and Android engineer with 4+ years of experience building cross-platform applications.">
-    
-    <!-- Fonts -->
+    <title>Vaju Makwana — Flutter & Android Engineer</title>
+    <meta name="description" content="Flutter and Android engineer with 4+ years of experience crafting premium cross-platform applications. Available for work.">
+    <meta property="og:title" content="Vaju Makwana — Flutter & Android Engineer">
+    <meta property="og:description" content="Crafting premium mobile experiences with 4+ years of expertise.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </head>
 <body>
-    <div id="scroll-progress"
-        style="position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: var(--accent); z-index: 2000; transition: width 0.1s;">
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="nav-logo">VM</div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Work</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+        <a href="Vaju_Makwana_Resume.pdf" download class="btn-ghost magnetic">Resume ↓</a>
+        <a href="mailto:vajumakwana16@gmail.com" class="btn-primary magnetic">Hire Me</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+    <ul>
+        <li><a href="#home" class="mobile-link">Home</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#projects" class="mobile-link">Work</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+</div>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <canvas class="hero-canvas" id="hero-canvas"></canvas>
+    <div class="aurora"></div>
+    <div class="mouse-glow" id="mouse-glow"></div>
+
+    <div class="hero-content">
+        <div class="hero-left reveal-left">
+            <div class="available-badge">
+                <span class="pulse-dot"></span>
+                Available for work
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-line">FLUTTER</span>
+                <span class="hero-line">&amp; <span class="gradient-text">ANDROID</span></span>
+                <span class="hero-line">ENGINEER</span>
+            </h1>
+            <p class="hero-sub">
+                Crafting premium mobile experiences with 4+ years of expertise. Specializing in high-performance cross-platform solutions that users love.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary magnetic">View Work →</a>
+                <a href="#contact" class="btn-ghost magnetic">Contact Me</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>4+</strong><span>Years Exp.</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><strong>10+</strong><span>Apps Built</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><strong>4.6★</strong><span>Store Rating</span></div>
+            </div>
+        </div>
+        <div class="hero-right reveal-right">
+            <div class="portrait-frame">
+                <div class="portrait-glow"></div>
+                <img src="assets/images/vaju_makwana.png" alt="Vaju Makwana" class="portrait-img">
+                <div class="portrait-badge">
+                    <span>Flutter</span>
+                    <span>Expert</span>
+                </div>
+                <div class="floating-chip chip-1">🚀 BLoC/Provider</div>
+                <div class="floating-chip chip-2">⚡ Firebase</div>
+                <div class="floating-chip chip-3">🎯 Clean Code</div>
+            </div>
+        </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo condensed" style="font-size: 1.2rem; font-weight: 900;">VM</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        <div style="display: flex; gap: 1rem; align-items: center;">
-            <a href="Vaju_Makwana_Resume.pdf" download class="tag" style="background: transparent; color: var(--text-primary); border: 1px solid var(--border-color); text-decoration: none;">Resume ↓</a>
-            <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" class="sun-icon" style="display: none;">
-                    <circle cx="12" cy="12" r="5" />
-                    <line x1="12" y1="1" x2="12" y2="3" />
-                    <line x1="12" y1="21" x2="12" y2="23" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                    <line x1="1" y1="12" x2="3" y2="12" />
-                    <line x1="21" y1="12" x2="23" y2="12" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-            </button>
-            <a href="mailto:vajumakwana16@gmail.com" class="tag"
-                style="background: var(--accent); color: white; text-decoration: none;">Hire Me</a>
-        </div>
-    </nav>
+    <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg-text condensed">BUILDER</div>
-        <div class="hero-content" style="display: flex; align-items: center; justify-content: space-between; text-align: left; gap: 4rem;">
-            <div style="flex: 1;">
-                <div class="available-pill">
-                    <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: inline-block;"></span>
-                    Available for work
-                </div>
-                <h1 class="text-large condensed" style="margin-bottom: 2rem;">FLUTTER <br>& <span class="text-accent">ANDROID</span><br>ENGINEER</h1>
-                <p class="hero-title" style="max-width: 500px; margin-bottom: 2.5rem; line-height: 1.8;">
-                    Crafting premium mobile experiences with 4+ years of expertise. Specializing in high-performance cross-platform solutions.
-                </p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="#projects" class="btn-accent">VIEW WORKS</a>
-                    <a href="Vaju_Makwana_Resume.pdf" download class="btn-accent" style="background: transparent; border: 1px solid var(--accent); color: var(--accent);">DOWNLOAD CV</a>
+<!-- About Section -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-label">WHO AM I</span>
+            <h2 class="section-title">A developer building for the <span class="gradient-text">future</span> of mobile.</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-bio reveal-left">
+                <p>Specialize in <strong>clean architecture</strong>, state management (BLoC/Provider), Firebase integration, and API-driven development. My goal is to craft apps that combine smooth performance, beautiful UI, and solid scalability.</p>
+                <p>I've delivered multiple projects, including POS systems, habit &amp; task management apps, AI-integrated tools, and casual games — published on the Play Store and App Store.</p>
+                <div class="about-links">
+                    <a href="https://www.linkedin.com/in/vajumakwana16" target="_blank" class="social-link magnetic">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/vajumakwana16" target="_blank" class="social-link magnetic">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        GitHub
+                    </a>
+                    <a href="mailto:vajumakwana16@gmail.com" class="social-link magnetic">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Email
+                    </a>
                 </div>
             </div>
-            <div class="portrait-container" style="flex: 0 0 400px; height: 500px; margin: 0;">
-                <div class="hi-badge">HI!</div>
-                <img src="assets/assets/images/512.png" alt="Vaju Makwana" class="portrait-img" style="border-radius: 80px;">
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="container" id="about">
-        <div class="fade-up">
-            <span class="section-tag">WHO AM I</span>
-            <h2 class="section-title">A specialized developer building for the <span class="text-accent">future</span> of
-                mobile.</h2>
-            <div style="max-width: 800px;">
-                <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
-                    Specialize in clean architecture, state management (BLoC/Provider), Firebase integration, and API-driven
-                    development.
-                    My goal is to craft apps that combine smooth performance, beautiful UI, and solid scalability.
-                </p>
-                <p style="color: var(--text-secondary);">
-                    I’ve delivered multiple projects, including POS systems, habit & task management apps, AI-integrated tools, and
-                    casual games —
-                    published on the Play Store and App Store.
-                </p>
-                <div style="margin-top: 3rem; transform: scale(0.9); transform-origin: left;">
-                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light"
-                        data-type="HORIZONTAL" data-vanity="vajumakwana16" data-version="v1"><a class="badge-base__link LI-simple-link"
-                            href="https://in.linkedin.com/in/vajumakwana16?trk=profile-badge">Vaju Makwana</a></div>
+            <div class="about-cards reveal-right">
+                <div class="stat-card glass-card">
+                    <h3>4+</h3>
+                    <p>Years Experience</p>
                 </div>
-                </div>
-            
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3 class="condensed">4+</h3>
-                    <p>Years of Experience</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="condensed">40%</h3>
+                <div class="stat-card glass-card">
+                    <h3>40%</h3>
                     <p>Bug Reduction</p>
                 </div>
-                <div class="stat-item">
-                    <h3 class="condensed">30%</h3>
+                <div class="stat-card glass-card">
+                    <h3>30%</h3>
                     <p>Performance Boost</p>
                 </div>
-                <div class="stat-item">
-                    <h3 class="condensed">4.6</h3>
+                <div class="stat-card glass-card">
+                    <h3>4.6★</h3>
                     <p>Store Rating</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Projects Section (Stacking Effect) -->
-    <section class="container" id="projects">
-        <div class="fade-up">
-            <span class="section-tag">SELECTED WORKS</span>
-            <h2 class="section-title">Digital <span class="text-accent">Products</span></h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div style="display: flex; height: 100%; flex-wrap: wrap;">
-                        <div class="project-image-wrap"
-                            style="flex: 1.2; min-width: 300px; background: #000;">
-                            <img src="assets/images/p1.png" alt="Global POS Solution" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="project-info"
-                            style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
-                            <div class="project-tags">
-                                <span class="tag">FLUTTER</span>
-                                <span class="tag">RETAIL</span>
-                            </div>
-                            <h3 class="condensed" style="font-size: 2.5rem;">Global POS Solution</h3>
-                            <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 1.1rem;">
-                                Architected a specialized POS platform for international restaurant chains. Optimized widget rebuilds and implemented lazy loading for
-                                seamless performance across platforms.
-                            </p>
-                            <div style="margin-top: 2rem;">
-                                <span class="text-accent" style="font-weight: 700;">45% COLD-START REDUCTION</span>
-                            </div>
+<!-- Projects Section -->
+<section class="section" id="projects">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-label">SELECTED WORKS</span>
+            <h2 class="section-title">Digital <span class="gradient-text">Products</span></h2>
+        </div>
+        <div class="projects-bento">
+            <!-- Project 1 - PDF Tools -->
+            <div class="project-card bento-large reveal-up" data-delay="0">
+                <div class="project-img-wrap">
+                    <img src="assets/images/pdf_tools_mockup.png" alt="PDF Tools">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.ultimate_pdf_tools&hl=en_US" target="_blank" style="text-decoration: none;">
+                                <span class="project-link-btn">View Details →</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="tag">FLUTTER</span>
+                        <span class="tag">UTILITY</span>
+                    </div>
+                    <h3>PDF Tools</h3>
+                    <p>Ultimate PDF management utility. Read, edit, split, and secure PDF files smoothly.</p>
+                    <div class="project-metric">
+                        <span class="metric-value">PDF</span>
+                        <span class="metric-label">Management</span>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div style="display: flex; height: 100%; flex-wrap: wrap; flex-direction: row-reverse;">
-                        <div class="project-image-wrap" style="flex: 1.2; min-width: 300px; background: #000;">
-                            <img src="assets/images/p2.png" alt="Scale-Ready Delivery" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="project-info"
-                            style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
-                            <div class="project-tags">
-                                <span class="tag">JAVA</span>
-                                <span class="tag">ANDROID</span>
-                            </div>
-                            <h3 class="condensed" style="font-size: 2.5rem;">Scale-Ready Delivery</h3>
-                            <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 1.1rem;">
-                                Full-featured delivery platform scaling to 10K+ users. Resolved critical payment gateway synchronization issues in production environments.
-                            </p>
-                            <div style="margin-top: 2rem;">
-                                <span class="text-accent" style="font-weight: 700;">4.6 RATING | 10K+ USERS</span>
-                            </div>
+            <!-- Project 2 - FocusX -->
+            <div class="project-card bento-small reveal-up" data-delay="100">
+                <div class="project-img-wrap">
+                    <img src="assets/images/focusx_mockup.png" alt="FocusX">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.focusx&hl=en_US" target="_blank" style="text-decoration: none;">
+                                <span class="project-link-btn">View Details →</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="tag">PRODUCTIVITY</span>
+                        <span class="tag">FLUTTER</span>
+                    </div>
+                    <h3>FocusX</h3>
+                    <p>Boost your productivity and stay focused with an intelligent task manager.</p>
+                    <div class="project-metric">
+                        <span class="metric-value">Focus</span>
+                        <span class="metric-label">Tracker</span>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Project 3: WalletX -->
-                <div class="project-card">
-                    <div style="display: flex; height: 100%; flex-wrap: wrap;">
-                        <div class="project-image-wrap"
-                            style="flex: 1.2; min-width: 300px; background: #000;">
-                            <img src="assets/images/p3.png" alt="WalletX" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="project-info"
-                            style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
-                            <div class="project-tags">
-                                <span class="tag">FINTECH</span>
-                                <span class="tag">FLUTTER</span>
-                            </div>
-                            <h3 class="condensed" style="font-size: 2.5rem;">WalletX : Money Manager</h3>
-                            <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 1.1rem;">
-                                Premium finance tracker with glassmorphic UI. Features automated SMS synchronization for transaction tracking and advanced category analytics.
-                            </p>
-                            <div style="margin-top: 2rem;">
-                                <span class="text-accent" style="font-weight: 700;">DARK/LIGHT MODE | SMS SYNC</span>
-                            </div>
+            <!-- Project 3 - WalletX -->
+            <div class="project-card bento-small reveal-up" data-delay="200">
+                <div class="project-img-wrap">
+                    <img src="assets/images/p3.png" alt="WalletX">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.expense" target="_blank" style="text-decoration: none;">
+                                <span class="project-link-btn">View Details →</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="tag">FINTECH</span>
+                        <span class="tag">FLUTTER</span>
+                    </div>
+                    <h3>WalletX: Money Manager</h3>
+                    <p>Premium finance tracker with glassmorphic UI &amp; SMS sync.</p>
+                    <div class="project-metric">
+                        <span class="metric-value">SMS</span>
+                        <span class="metric-label">Auto Sync</span>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Project 4: AudioConnect -->
-                <div class="project-card">
-                    <div style="display: flex; height: 100%; flex-wrap: wrap; flex-direction: row-reverse;">
-                        <div class="project-image-wrap"
-                            style="flex: 1.2; min-width: 300px; background: #000;">
-                            <img src="assets/images/p4.png" alt="AudioConnect" style="width: 100%; height: 100%; object-fit: cover;">
+            <!-- Project 4 - AudioConnect -->
+            <div class="project-card bento-large reveal-up" data-delay="300">
+                <div class="project-img-wrap">
+                    <img src="assets/images/p4.png" alt="AudioConnect">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.audio_connect&hl=en_US" target="_blank" style="text-decoration: none;">
+                                <span class="project-link-btn">View Details →</span>
+                            </a>
                         </div>
-                        <div class="project-info"
-                            style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
-                            <div class="project-tags">
-                                <span class="tag">UTILITY</span>
-                                <span class="tag">NETWORKING</span>
-                            </div>
-                            <h3 class="condensed" style="font-size: 2.5rem;">AudioConnect – PC Bridge</h3>
-                            <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 1.1rem;">
-                                Wireless audio bridge utility. Streams PC audio to Android and enables phone mic as PC input over Wi-Fi with sub-50ms latency tracking.
-                            </p>
-                            <div style="margin-top: 2rem;">
-                                <span class="text-accent" style="font-weight: 700;">LOW-LATENCY | WI-FI MIC</span>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="tag">UTILITY</span>
+                        <span class="tag">NETWORKING</span>
+                        <span class="tag">WI-FI</span>
+                    </div>
+                    <h3>AudioConnect – PC Bridge</h3>
+                    <p>Wireless audio bridge utility. Streams PC audio to Android and enables phone mic as PC input over Wi-Fi with sub-50ms latency tracking.</p>
+                    <div class="project-metric">
+                        <span class="metric-value">&lt;50ms</span>
+                        <span class="metric-label">Latency</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Skills Section (Flipping Effect) -->
-    <section class="container" id="skills">
-        <div class="fade-up">
-            <span class="section-tag">EXPERTISE</span>
-            <h2 class="section-title">Technical <span class="text-accent">Arsenal</span></h2>
-            <div class="skills-grid">
-                <!-- Skill 1 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3 class="condensed">Mobile</h3>
-                            <p style="color: var(--accent); font-weight: 700;">Flutter & Android</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <p>Dart, BLoC, Provider, Java, MVC, Material UI</p>
-                        </div>
-                    </div>
+<!-- Skills Section -->
+<section class="section" id="skills">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-label">EXPERTISE</span>
+            <h2 class="section-title">Technical <span class="gradient-text">Arsenal</span></h2>
+        </div>
+        <div class="skills-categories reveal-up">
+            <div class="skill-category glass-card">
+                <div class="skill-cat-icon">📱</div>
+                <h3>Mobile</h3>
+                <div class="skill-list">
+                    <span class="skill-pill">Flutter</span>
+                    <span class="skill-pill">Dart</span>
+                    <span class="skill-pill">Android (Java)</span>
+                    <span class="skill-pill">BLoC</span>
+                    <span class="skill-pill">Provider</span>
+                    <span class="skill-pill">Material UI</span>
                 </div>
-                <!-- Skill 2 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3 class="condensed">Backend</h3>
-                            <p style="color: var(--accent); font-weight: 700;">Firebase & APIs</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <p>Firestore, Auth, REST APIs, PHP, MySQL, Node.js</p>
-                        </div>
-                        </div>
+            </div>
+            <div class="skill-category glass-card">
+                <div class="skill-cat-icon">🔥</div>
+                <h3>Backend &amp; Cloud</h3>
+                <div class="skill-list">
+                    <span class="skill-pill">Firebase</span>
+                    <span class="skill-pill">Firestore</span>
+                    <span class="skill-pill">REST APIs</span>
+                    <span class="skill-pill">PHP</span>
+                    <span class="skill-pill">MySQL</span>
+                    <span class="skill-pill">Node.js</span>
                 </div>
-                <!-- Skill 3 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3 class="condensed">Tools</h3>
-                            <p style="color: var(--accent); font-weight: 700;">DevOps & More</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <p>Git, Postman, Play Console, App Store Connect, CI/CD</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="skill-category glass-card">
+                <div class="skill-cat-icon">🛠️</div>
+                <h3>Tools &amp; DevOps</h3>
+                <div class="skill-list">
+                    <span class="skill-pill">Git</span>
+                    <span class="skill-pill">Postman</span>
+                    <span class="skill-pill">Play Console</span>
+                    <span class="skill-pill">App Store Connect</span>
+                    <span class="skill-pill">CI/CD</span>
+                    <span class="skill-pill">Figma</span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section class="container" id="experience">
-        <div class="fade-up">
-            <span class="section-tag">JOURNEY</span>
-            <h2 class="section-title">Work <span class="text-accent">Experience</span></h2>
-    
-            <div style="border-left: 2px solid var(--border-color); padding-left: 3rem; position: relative;">
-                <!-- Role 1 -->
-                <div style="margin-bottom: 4rem; position: relative;">
-                    <div
-                        style="position: absolute; left: -3.65rem; top: 0; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; border: 4px solid var(--bg-primary);">
+        <!-- Marquee -->
+        <div class="marquee-wrapper reveal-up">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span>Flutter</span><span>•</span>
+                    <span>Dart</span><span>•</span>
+                    <span>Android</span><span>•</span>
+                    <span>Firebase</span><span>•</span>
+                    <span>BLoC</span><span>•</span>
+                    <span>Provider</span><span>•</span>
+                    <span>REST API</span><span>•</span>
+                    <span>Java</span><span>•</span>
+                    <span>Git</span><span>•</span>
+                    <span>MySQL</span><span>•</span>
+                    <span>Node.js</span><span>•</span>
+                    <span>PHP</span><span>•</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span>Flutter</span><span>•</span>
+                    <span>Dart</span><span>•</span>
+                    <span>Android</span><span>•</span>
+                    <span>Firebase</span><span>•</span>
+                    <span>BLoC</span><span>•</span>
+                    <span>Provider</span><span>•</span>
+                    <span>REST API</span><span>•</span>
+                    <span>Java</span><span>•</span>
+                    <span>Git</span><span>•</span>
+                    <span>MySQL</span><span>•</span>
+                    <span>Node.js</span><span>•</span>
+                    <span>PHP</span><span>•</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section class="section" id="experience">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-label">JOURNEY</span>
+            <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item reveal-left" data-delay="0">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card glass-card">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">July 2022 — Present</span>
+                        <span class="timeline-badge current">Current</span>
                     </div>
-                    <span class="tag" style="margin-bottom: 1rem; display: inline-block;">JULY 2022 - PRESENT</span>
-                    <h3 class="condensed">Flutter Developer</h3>
-                    <p style="font-weight: 600; margin-bottom: 1rem;">Smart Webtech, Jamnagar (Full-time)</p>
-                    <ul style="color: var(--text-secondary); list-style: none;">
-                        <li>• Reduced app bugs by 40% through systematic code refactoring.</li>
-                        <li>• Improved performance by 30% via widget optimization and lazy loading.</li>
-                        <li>• Mentored junior developers and led feature releases.</li>
+                    <h3>Flutter Developer</h3>
+                    <p class="timeline-company">Smart Webtech, Jamnagar · Full-time</p>
+                    <ul class="timeline-points">
+                        <li>Reduced app bugs by <strong>40%</strong> through systematic code refactoring.</li>
+                        <li>Improved performance by <strong>30%</strong> via widget optimization and lazy loading.</li>
+                        <li>Mentored junior developers and led multiple feature releases.</li>
+                        <li>Architected POS system used in international restaurant chains.</li>
                     </ul>
-                </div>
-                <!-- Role 2 -->
-                <div style="margin-bottom: 4rem; position: relative;">
-                    <div
-                        style="position: absolute; left: -3.65rem; top: 0; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; border: 4px solid var(--bg-primary);">
+                    <div class="timeline-tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Dart</span>
+                        <span class="tag">BLoC</span>
+                        <span class="tag">Firebase</span>
                     </div>
-                    <span class="tag" style="margin-bottom: 1rem; display: inline-block;">APRIL 2022 - JULY 2022</span>
-                    <h3 class="condensed">Android Developer</h3>
-                    <p style="font-weight: 600; margin-bottom: 1rem;">Smart Webtech</p>
-                    <ul style="color: var(--text-secondary); list-style: none;">
-                        <li>• Developed native Android apps using Java (MVC).</li>
-                        <li>• Fixed critical payment gateway issues, improving transaction success.</li>
-                    </ul>
                 </div>
-                <!-- Role 3 -->
-                <div style="margin-bottom: 4rem; position: relative;">
-                    <div
-                        style="position: absolute; left: -3.65rem; top: 0; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; border: 4px solid var(--bg-primary);">
+            </div>
+
+            <div class="timeline-item reveal-left" data-delay="150">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card glass-card">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">April 2022 — July 2022</span>
                     </div>
-                    <span class="tag" style="margin-bottom: 1rem; display: inline-block;">DEC 2021 - APRIL 2022</span>
-                    <h3 class="condensed">PHP Developer</h3>
-                    <p style="font-weight: 600; margin-bottom: 1rem;">Smart Webtech (On-site)</p>
-                    <ul style="color: var(--text-secondary); list-style: none;">
-                        <li>• Web development using PHP, Ajax, jQuery, and MySQL.</li>
-                        <li>• Focused on creating scalable RESTful APIs.</li>
+                    <h3>Android Developer</h3>
+                    <p class="timeline-company">Smart Webtech · On-site</p>
+                    <ul class="timeline-points">
+                        <li>Developed native Android apps using Java (MVC).</li>
+                        <li>Fixed critical payment gateway issues, improving transaction success rates.</li>
                     </ul>
+                    <div class="timeline-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Android</span>
+                        <span class="tag">MVC</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-left" data-delay="300">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card glass-card">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">Dec 2021 — April 2022</span>
+                    </div>
+                    <h3>PHP Developer</h3>
+                    <p class="timeline-company">Smart Webtech · On-site</p>
+                    <ul class="timeline-points">
+                        <li>Web development using PHP, Ajax, jQuery, and MySQL.</li>
+                        <li>Focused on creating scalable RESTful APIs.</li>
+                    </ul>
+                    <div class="timeline-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">REST API</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact CTA -->
-    <section class="container">
-        <div class="contact-section fade-up" id="contact" style="padding: 6rem 2rem;">
-            <span class="section-tag" style="color: white; opacity: 0.6;">GET IN TOUCH</span>
-            <h2 class="section-title">Ready to build <br>something <span class="text-accent">incredible</span>?</h2>
-            <a href="mailto:vajumakwana16@gmail.com" class="btn-accent">START A PROJECT</a>
-    
-            <div style="margin-top: 4rem; display: flex; justify-content: center; gap: 2rem;">
-                <a href="https://www.linkedin.com/in/vajumakwana16" target="_blank"
-                    style="color: white; text-decoration: none; font-weight: 600;">LINKEDIN</a>
-                <a href="https://github.com/vajumakwana16" target="_blank"
-                    style="color: white; text-decoration: none; font-weight: 600;">GITHUB</a>
-                <a href="mailto:vajumakwana16@gmail.com"
-                    style="color: white; text-decoration: none; font-weight: 600;">EMAIL</a>
+<!-- Testimonials Section -->
+<section class="section" id="testimonials">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-label">KIND WORDS</span>
+            <h2 class="section-title">What people <span class="gradient-text">say</span></h2>
+        </div>
+        <div class="testimonials-carousel reveal-up">
+            <div class="testimonials-track" id="testimonials-track">
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Vaju consistently delivered high-quality Flutter code. His understanding of BLoC patterns and Firebase integration is outstanding."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div>
+                            <strong>Smart Webtech Manager</strong>
+                            <span>Direct Supervisor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"The WalletX app is incredibly smooth and the UI is stunning. Exactly what we envisioned and more. Highly professional work."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AC</div>
+                        <div>
+                            <strong>App User</strong>
+                            <span>WalletX · Play Store Review</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"AudioConnect solved a real problem for me. The Wi-Fi bridge works flawlessly. Low latency and very reliable connection."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TU</div>
+                        <div>
+                            <strong>Power User</strong>
+                            <span>AudioConnect · Play Store</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prev-btn" aria-label="Previous">←</button>
+                <div class="carousel-dots" id="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="carousel-btn" id="next-btn" aria-label="Next">→</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2025 VAJU MAKWANA. ALL RIGHTS RESERVED.</p>
-    </footer>
+<!-- Contact Section -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-left reveal-left">
+                <span class="section-label">GET IN TOUCH</span>
+                <h2 class="section-title">Let's build something <span class="gradient-text">incredible</span></h2>
+                <p>Available for freelance projects, full-time roles, and exciting collaborations. Let's create something amazing together.</p>
+                <div class="contact-info">
+                    <a href="mailto:vajumakwana16@gmail.com" class="contact-item magnetic">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <strong>Email</strong>
+                            <span>vajumakwana16@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vajumakwana16" target="_blank" class="contact-item magnetic">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <span>vajumakwana16</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/vajumakwana16" target="_blank" class="contact-item magnetic">
+                        <div class="contact-icon">🐙</div>
+                        <div>
+                            <strong>GitHub</strong>
+                            <span>vajumakwana16</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-right reveal-right">
+                <form class="contact-form glass-card" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary magnetic" style="width:100%">Send Message →</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <script>
-            // Scroll Progress Bar
-            window.addEventListener('scroll', () => {
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                document.getElementById("scroll-progress").style.width = scrolled + "%";
-        });
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">VM</div>
+            <p>© 2025 Vaju Makwana. Crafted with ♥ and Flutter.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/vajumakwana16" target="_blank">LinkedIn</a>
+                <a href="https://github.com/vajumakwana16" target="_blank">GitHub</a>
+                <a href="mailto:vajumakwana16@gmail.com">Email</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    // Mouse move effect for portrait
-    const portrait = document.querySelector('.portrait-container');
-    if (portrait) {
-        document.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e;
-            const { innerWidth, innerHeight } = window;
-            const x = (clientX / innerWidth - 0.5) * 20;
-            const y = (clientY / innerHeight - 0.5) * 20;
-            portrait.style.transform = `translate(${x}px, ${y}px)`;
-        });
-    }
-
-            // Intersection Observer for fade-up and flip animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-        }, observerOptions);
-
-            document.querySelectorAll('.fade-up, .project-card, .flip-card').forEach(el => observer.observe(el));
-
-            // Theme Toggle Logic
-            const themeToggle = document.getElementById('theme-toggle');
-            const sunIcon = document.querySelector('.sun-icon');
-            const moonIcon = document.querySelector('.moon-icon');
-            const html = document.documentElement;
-
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            html.setAttribute('data-theme', savedTheme);
-            updateIcons(savedTheme);
-
-            themeToggle.addEventListener('click', () => {
-                const currentTheme = html.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                html.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                updateIcons(newTheme);
-        });
-
-            function updateIcons(theme) {
-                if (theme === 'dark') {
-                    sunIcon.style.display = 'block';
-                    moonIcon.style.display = 'none';
-                } else {
-                    sunIcon.style.display = 'none';
-                    moonIcon.style.display = 'block';
-                }
-            }
-
-            // Smooth scroll for nav links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
