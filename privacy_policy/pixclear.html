@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | PixClear – AI Photo Enhancer</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Custom Properties for Theming */
+    :root[data-theme="dark"] {
+      --bg-color: #080c14;
+      --surface-color: rgba(17, 24, 39, 0.7);
+      --surface-border: rgba(255, 255, 255, 0.08);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+      --accent: #10b981;
+      --accent-bg: rgba(16, 185, 129, 0.1);
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --toc-active-bg: rgba(79, 70, 229, 0.15);
+      --toc-active-border: #4f46e5;
+      --search-bg: rgba(31, 41, 55, 0.8);
+      --highlight-bg: rgba(245, 158, 11, 0.3);
+      --highlight-text: #fbbf24;
+      --code-bg: #1e293b;
+    }
+
+    :root[data-theme="light"] {
+      --bg-color: #f8fafc;
+      --surface-color: rgba(255, 255, 255, 0.85);
+      --surface-border: rgba(0, 0, 0, 0.06);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+      --accent: #059669;
+      --accent-bg: rgba(5, 150, 105, 0.08);
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+      --toc-active-bg: rgba(79, 70, 229, 0.08);
+      --toc-active-border: #4f46e5;
+      --search-bg: #ffffff;
+      --highlight-bg: rgba(245, 158, 11, 0.2);
+      --highlight-text: #d97706;
+      --code-bg: #f1f5f9;
+    }
+
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 100px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Background decoration */
+    .bg-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.07) 0%, rgba(0, 0, 0, 0) 70%);
+      top: -200px;
+      right: -200px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .bg-glow-2 {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+      bottom: -150px;
+      left: -150px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Container layout */
+    .app-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(8, 12, 20, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--surface-border);
+      padding: 16px 0;
+    }
+
+    [data-theme="light"] header {
+      background-color: rgba(248, 250, 252, 0.8);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--primary-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      border: 1px solid var(--surface-border);
+      background-color: var(--surface-color);
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      transform: translateY(-1px);
+    }
+
+    [data-theme="light"] .btn:hover {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    .btn-icon {
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    /* Search bar styles */
+    .search-container {
+      position: relative;
+      width: 260px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px 12px 8px 36px;
+      border-radius: 8px;
+      border: 1px solid var(--surface-border);
+      background-color: var(--search-bg);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Hero section */
+    .hero-section {
+      text-align: center;
+      padding: 60px 0 40px;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 40px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background-color: var(--accent-bg);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 42px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-meta {
+      font-size: 14px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    /* Privacy Quick-view / Highlights Accordion */
+    .quick-view {
+      margin-bottom: 48px;
+    }
+
+    .quick-view-title {
+      font-size: 22px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quick-view-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .quick-card {
+      background-color: var(--surface-color);
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .quick-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .quick-card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background-color: var(--toc-active-bg);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .quick-card-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .quick-card-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* Main layout: Sidebar + Content */
+    .main-layout {
+      display: flex;
+      gap: 48px;
+      position: relative;
+    }
+
+    /* Table of Contents / Sidebar */
+    .sidebar {
+      width: 280px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 100px;
+      height: calc(100vh - 140px);
+      overflow-y: auto;
+      padding-right: 12px;
+    }
+
+    /* Scrollbar customized for sidebar */
+    .sidebar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+      background: var(--surface-border);
+      border-radius: 2px;
+    }
+
+    .toc-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .toc-link {
+      display: block;
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      border-left: 2px solid transparent;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .toc-link:hover {
+      color: var(--text-primary);
+      background-color: rgba(255, 255, 255, 0.02);
+      text-decoration: none;
+    }
+
+    [data-theme="light"] .toc-link:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    .toc-link.active {
+      color: var(--primary);
+      background-color: var(--toc-active-bg);
+      border-left-color: var(--toc-active-border);
+      font-weight: 600;
+    }
+
+    /* Content Area */
+    .content-area {
+      flex-grow: 1;
+      max-width: 800px;
+    }
+
+    .content-section {
+      margin-bottom: 48px;
+      scroll-margin-top: 110px; /* matches sticky header + offset */
+    }
+
+    .content-section h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .content-section p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-size: 15.5px;
+    }
+
+    .content-section ul, .content-section ol {
+      margin-left: 24px;
+      margin-bottom: 20px;
+      color: var(--text-secondary);
+    }
+
+    .content-section li {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .content-section strong {
+      color: var(--text-primary);
+    }
+
+    /* Callout Box style */
+    .callout-box {
+      background-color: var(--surface-color);
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 20px 0;
+    }
+
+    .callout-box p {
+      margin: 0;
+      font-size: 14.5px;
+      color: var(--text-primary);
+    }
+
+    /* Table styles */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14.5px;
+      text-align: left;
+    }
+
+    .data-table th, .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .data-table th {
+      font-weight: 600;
+      color: var(--text-primary);
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    [data-theme="light"] .data-table th {
+      background-color: rgba(0, 0, 0, 0.01);
+    }
+
+    .data-table td {
+      color: var(--text-secondary);
+    }
+
+    /* Highlight class for search hits */
+    mark {
+      background-color: var(--highlight-bg);
+      color: var(--highlight-text);
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 1px solid var(--surface-border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+      }
+      header, .sidebar, .btn, .search-container, .bg-glow, .bg-glow-2, .quick-view {
+        display: none !important;
+      }
+      .content-area {
+        max-width: 100%;
+        margin: 0;
+      }
+      .content-section {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .main-layout {
+        flex-direction: column;
+      }
+      .sidebar {
+        display: none; /* Hide sidebar list on mobile */
+      }
+      .content-area {
+        max-width: 100%;
+      }
+      .hero-title {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav-actions .search-container {
+        display: none; /* Hide search bar in nav on tiny screens */
+      }
+      .hero-meta {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+      }
+      .quick-view-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow"></div>
+  <div class="bg-glow-2"></div>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="app-container nav-wrapper">
+      <div class="logo-area">
+        <div class="logo-icon">AI</div>
+        <div class="logo-text">PixClear – AI Photo Enhancer</div>
+      </div>
+      <div class="nav-actions">
+        <!-- Search bar -->
+        <div class="search-container">
+          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search privacy policy...">
+        </div>
+        <!-- Print / PDF -->
+        <button class="btn btn-icon" id="printBtn" title="Print Document">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-3a2 2 0 00-2-2H9a2 2 0 00-2 2v3a2 2 0 002 2zm5-17h-6a2 2 0 00-2 2v3h10V4a2 2 0 00-2-2z"></path>
+          </svg>
+        </button>
+        <!-- Theme toggle -->
+        <button class="btn btn-icon" id="themeToggle" title="Toggle Light/Dark Theme">
+          <svg id="themeIcon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <!-- Sun icon outline (shown in dark mode to switch to light) -->
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+    
+    <!-- Hero Banner -->
+    <section class="hero-section">
+      <div class="hero-tag">Privacy Center</div>
+      <h1 class="hero-title">Privacy Policy</h1>
+      <div class="hero-meta">
+        <span><strong>Last Updated:</strong> June 13, 2026</span>
+        <span><strong>Effective Date:</strong> June 13, 2026</span>
+        <span><strong>App Version:</strong> 1.0.0</span>
+      </div>
+    </section>
+
+    <!-- Quick Highlights (Privacy at a Glance) -->
+    <section class="quick-view">
+      <h2 class="quick-view-title">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        Privacy at a Glance
+      </h2>
+      <div class="quick-view-grid">
+        <div class="quick-card">
+          <div class="quick-card-header">
+            <div class="quick-card-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="quick-card-title">Local Processing</h3>
+          </div>
+          <p class="quick-card-desc">All image processing and enhancement runs 100% locally on your device. We do not use any servers to process or store your photos.</p>
+        </div>
+
+        <div class="quick-card">
+          <div class="quick-card-header">
+            <div class="quick-card-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="quick-card-title">On-Device Storage</h3>
+          </div>
+          <p class="quick-card-desc">Your preferences and enhanced photos are stored only inside the App's local sandbox. If you uninstall the App, this data is permanently lost.</p>
+        </div>
+
+        <div class="quick-card">
+          <div class="quick-card-header">
+            <div class="quick-card-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="quick-card-title">Ads & Purchases</h3>
+          </div>
+          <p class="quick-card-desc">We display ads via Google AdMob and process payments via Google/Apple. No image or personal database info is ever sent online.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Sidebar + Content Grid -->
+    <div class="main-layout">
+      
+      <!-- Table of Contents Sidebar -->
+      <aside class="sidebar">
+        <h3 class="toc-title">ON THIS PAGE</h3>
+        <ul class="toc-list">
+          <li><a href="#introduction" class="toc-link">1. Introduction</a></li>
+          <li><a href="#info-collect" class="toc-link">2. Information We Collect</a></li>
+          <li><a href="#image-processing" class="toc-link">3. On-Device Image Processing</a></li>
+          <li><a href="#permissions" class="toc-link">4. App Permissions Required</a></li>
+          <li><a href="#third-parties" class="toc-link">5. Third-Party Integration</a></li>
+          <li><a href="#purchases" class="toc-link">6. Payments & Subscriptions</a></li>
+          <li><a href="#data-security" class="toc-link">7. Data Security & Uninstall Behavior</a></li>
+          <li><a href="#children" class="toc-link">8. Children's Privacy</a></li>
+          <li><a href="#rights" class="toc-link">9. Your Rights & Options</a></li>
+          <li><a href="#contact" class="toc-link">10. Contact Us</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Policy Content -->
+      <div class="content-area" id="policyContent">
+        
+        <!-- Introduction -->
+        <section id="introduction" class="content-section">
+          <h2>1. Introduction</h2>
+          <p>Welcome to <strong>PixClear – AI Photo Enhancer</strong> ("we", "our", or "us"). We are committed to protecting your privacy and providing a secure environment for all your image enhancement needs.</p>
+          <p>This Privacy Policy explains how we collect, use, process, and protect your information when you use our mobile application ("App"). By using the App, you consent to the data practices described in this policy. If you do not agree with these practices, please do not use the App or grant permissions.</p>
+        </section>
+
+        <!-- Information We Collect -->
+        <section id="info-collect" class="content-section">
+          <h2>2. Information We Collect</h2>
+          <p>We believe in absolute data privacy. Because all core functionalities of the App run locally on your device, we collect minimal data:</p>
+          <ul>
+            <li><strong>Photos and Images:</strong> The App accesses your device's camera and photo library to enhance images. These files remain entirely on your device. We do not collect, view, or upload your photos to any external servers.</li>
+            <li><strong>Local Application Data:</strong> Your app settings, preferences, and processed histories are stored locally on your device (using Hive database). <strong>This data is not backed up to our servers and is permanently deleted when you uninstall the App.</strong></li>
+            <li><strong>Device & Identifier Data:</strong> We may collect info such as your device model, OS version, unique device identifiers (e.g., Android ID, IDFA, AAID), IP address, and network connectivity state. This is used strictly for serving ads and analyzing anonymous app usage.</li>
+            <li><strong>Purchase History:</strong> For paid upgrades, we track transaction items and statuses (e.g., active premium status). We do <strong>not</strong> collect payment card details.</li>
+          </ul>
+        </section>
+
+        <!-- On-Device Image Processing -->
+        <section id="image-processing" class="content-section">
+          <h2>3. On-Device Image Processing</h2>
+          <p>To provide high-definition image enhancement, PixClear – AI Photo Enhancer relies entirely on local processing mechanisms:</p>
+          <div class="callout-box">
+            <p><strong>On-Device AI Processing:</strong> When you select a photo and initiate an AI-powered enhancement feature, all computations, model inference, and rendering are executed directly on your device's processor (CPU/GPU/NPU). <strong>No image data is sent to external servers.</strong> Your photos never leave your device.</p>
+          </div>
+          <p>This guarantees total privacy for your personal images, as no third party (including us) can access or view the photos you enhance.</p>
+        </section>
+
+        <!-- App Permissions Required -->
+        <section id="permissions" class="content-section">
+          <h2>4. App Permissions Required</h2>
+          <p>For a seamless image enhancement experience, the App requires certain operating system permissions. You can manage or revoke these permissions at any time in your device settings:</p>
+          
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Permission Name</th>
+                <th>Platform</th>
+                <th>Why It Is Needed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Camera</strong></td>
+                <td>iOS & Android</td>
+                <td>Allows you to capture new photos directly inside the App to enhance them instantly.</td>
+              </tr>
+              <tr>
+                <td><strong>Photo Library / Storage</strong></td>
+                <td>iOS & Android</td>
+                <td>Needed to select existing pictures from your gallery and to save your enhanced images.</td>
+              </tr>
+              <tr>
+                <td><strong>Internet & Network State</strong></td>
+                <td>Android</td>
+                <td>Required only to fetch advertising banners (AdMob) and verify in-app purchases/subscriptions. No image data is ever transmitted.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Third-Party Integration -->
+        <section id="third-parties" class="content-section">
+          <h2>5. Third-Party Integration</h2>
+          <p>The App integrates third-party services that may collect information used to identify you or support key operational functions. Below is a list of our primary third-party partners and links to their privacy disclosures:</p>
+          <ul>
+            <li><strong>Google Play Services:</strong> Required on Android devices for base infrastructure. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><strong>Google Mobile Ads (AdMob):</strong> Used to deliver advertisements inside our free tier. AdMob collects mobile advertising IDs (e.g., AAID) to present relevant advertising campaigns. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Privacy & Terms</a></li>
+            <li><strong>Apple App Store / Google Play Billing:</strong> Handles all premium payments and subscriptions.</li>
+          </ul>
+        </section>
+
+        <!-- Payments & Subscriptions -->
+        <section id="purchases" class="content-section">
+          <h2>6. Payments & Subscriptions</h2>
+          <p>We offer subscription models and in-app purchases to unlock professional enhancement algorithms and remove advertising banners.</p>
+          <p>All subscription management and transactions are handled directly by the respective platform operator (Apple Inc. or Google LLC) via their official payment frameworks. We do not hold, record, or receive credit card, bank account, or payment billing numbers. Your payment details are governed by the platform store's own agreements and terms of service.</p>
+        </section>
+
+        <!-- Data Security & Uninstall Behavior -->
+        <section id="data-security" class="content-section">
+          <h2>7. Data Security & Uninstall Behavior</h2>
+          <p>We value your trust and implement appropriate technical and administrative safeguards to protect your data:</p>
+          <ul>
+            <li><strong>No Server Storage:</strong> Since we do not host any remote image processing servers or user accounts, your photos and app preferences cannot be compromised via external server breaches.</li>
+            <li><strong>Sandbox Isolation:</strong> Your local app data is saved within the operating system's secure app sandbox.</li>
+            <li><strong>Uninstall Data Loss:</strong> Please note that because all your preferences, settings, and cached works are stored strictly on your device, **uninstalling the App will result in the immediate and permanent deletion of all local data.** This data cannot be recovered by us.</li>
+          </ul>
+        </section>
+
+        <!-- Children's Privacy -->
+        <section id="children" class="content-section">
+          <h2>8. Children's Privacy</h2>
+          <p>Our App is not intended for use by children under the age of 13. We do not knowingly collect personal identifiable information from children under 13 years of age. If we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we can take necessary actions.</p>
+        </section>
+
+        <!-- Your Rights & Options -->
+        <section id="rights" class="content-section">
+          <h2>9. Your Rights & Options</h2>
+          <p>Depending on your jurisdiction (such as under the GDPR or CCPA), you may hold specific privacy protections. These include:</p>
+          <ul>
+            <li><strong>Opt-Out of Targeted Ads:</strong> You can opt-out of personalized advertisements by disabling interest-based ads or resetting your advertising ID within your device's system settings.</li>
+            <li><strong>Revoke Permissions:</strong> You can turn off Camera or Photo Library permissions at any time within your system settings, which will stop access to those resources.</li>
+            <li><strong>Delete Cache:</strong> You can clear the local storage cache for the application in the OS settings menu to delete any cached parameters.</li>
+          </ul>
+        </section>
+
+        <!-- Contact Us -->
+        <section id="contact" class="content-section">
+          <h2>10. Contact Us</h2>
+          <p>If you have any questions, comments, or concerns regarding this Privacy Policy or our app practices, please feel free to reach out to us at:</p>
+          <div class="callout-box">
+            <p><strong>Email:</strong> support@aiimageenhancerpro.com</p>
+            <p><strong>Web Support:</strong> <a href="https://support.aiimageenhancerpro.com" target="_blank" rel="noopener">https://support.aiimageenhancerpro.com</a></p>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 PixClear – AI Photo Enhancer. All rights reserved.</p>
+      <p style="margin-top: 8px; font-size: 12px; color: var(--text-muted);">This policy is subject to update. Check back periodically for changes.</p>
+    </footer>
+
+  </main>
+
+  <script>
+    // Theme Toggling Logic
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+
+    const sunIcon = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path>`;
+    const moonIcon = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>`;
+
+    function setTheme(theme) {
+      htmlElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (theme === 'dark') {
+        themeIcon.innerHTML = sunIcon;
+      } else {
+        themeIcon.innerHTML = moonIcon;
+      }
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // Print Button Logic
+    document.getElementById('printBtn').addEventListener('click', () => {
+      window.print();
+    });
+
+    // Scrollspy Navigation Logic
+    const sections = document.querySelectorAll('.content-section');
+    const tocLinks = document.querySelectorAll('.toc-link');
+
+    const options = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          tocLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+              // Optional: scroll active link into view in the sidebar
+              link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, options);
+
+    sections.forEach(section => observer.observe(section));
+
+    // Live Search Functionality
+    const searchInput = document.getElementById('searchInput');
+    const contentArea = document.getElementById('policyContent');
+
+    // Store original innerHTML of sections to restore them on clear search
+    const sectionOriginalHTML = {};
+    sections.forEach(section => {
+      sectionOriginalHTML[section.id] = section.innerHTML;
+    });
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      
+      sections.forEach(section => {
+        const originalHTML = sectionOriginalHTML[section.id];
+        
+        if (!query) {
+          section.innerHTML = originalHTML;
+          section.style.display = '';
+          return;
+        }
+
+        // Simple text match check
+        const textContent = section.textContent.toLowerCase();
+        if (!textContent.includes(query)) {
+          // If query doesn't match section content, hide section
+          section.style.display = 'none';
+          return;
+        } else {
+          section.style.display = '';
+        }
+
+        // Parse HTML and highlight matches recursively in text nodes only (to prevent breaking HTML tags)
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = originalHTML;
+
+        highlightTextNodes(tempDiv, query);
+        section.innerHTML = tempDiv.innerHTML;
+      });
+    });
+
+    function highlightTextNodes(node, query) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const text = node.textContent;
+        const lowerText = text.toLowerCase();
+        let index = lowerText.indexOf(query);
+        
+        if (index >= 0) {
+          const parent = node.parentNode;
+          const fragment = document.createDocumentFragment();
+          let lastIndex = 0;
+
+          while (index >= 0) {
+            // Add text before match
+            if (index > lastIndex) {
+              fragment.appendChild(document.createTextNode(text.substring(lastIndex, index)));
+            }
+
+            // Add highlighted text
+            const mark = document.createElement('mark');
+            mark.textContent = text.substring(index, index + query.length);
+            fragment.appendChild(mark);
+
+            lastIndex = index + query.length;
+            index = lowerText.indexOf(query, lastIndex);
+          }
+
+          // Add text after last match
+          if (lastIndex < text.length) {
+            fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
+          }
+
+          parent.replaceChild(fragment, node);
+        }
+      } else if (node.nodeType === Node.ELEMENT_NODE && node.nodeName !== 'MARK' && node.nodeName !== 'A') {
+        // Recurse children, but skip links/marks to avoid breaking layout structures or creating nested marks
+        const children = Array.from(node.childNodes);
+        children.forEach(child => highlightTextNodes(child, query));
+      }
+    }
+  </script>
+</body>
+</html>
