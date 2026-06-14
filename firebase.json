@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "site": "vajumakwana",
+    "public": "./",
+    "ignore": [
+      "firebase.json",
+      "**/node_modules/**"
+    ]
+  }
+}
