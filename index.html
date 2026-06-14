@@ -23,7 +23,7 @@
 
 <!-- Navigation -->
 <nav class="navbar" id="navbar">
-    <div class="nav-logo">VM</div>
+    <div class="nav-logo"><img src="assets/images/logo.png" alt="VM Logo"></div>
     <ul class="nav-links" id="nav-links">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
@@ -33,6 +33,10 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
     <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn magnetic" aria-label="Toggle Theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
         <a href="Vaju_Makwana_Resume.pdf" download class="btn-ghost magnetic">Resume ↓</a>
         <a href="mailto:vajumakwana16@gmail.com" class="btn-primary magnetic">Hire Me</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -61,10 +65,7 @@
 
     <div class="hero-content">
         <div class="hero-left reveal-left">
-            <div class="available-badge">
-                <span class="pulse-dot"></span>
-                Available for work
-            </div>
+
             <h1 class="hero-title">
                 <span class="hero-line">FLUTTER</span>
                 <span class="hero-line">&amp; <span class="gradient-text">ANDROID</span></span>
@@ -100,10 +101,7 @@
         </div>
     </div>
 
-    <div class="scroll-hint">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-    </div>
+
 </section>
 
 <!-- About Section -->
@@ -161,113 +159,256 @@
             <span class="section-label">SELECTED WORKS</span>
             <h2 class="section-title">Digital <span class="gradient-text">Products</span></h2>
         </div>
-        <div class="projects-bento">
-            <!-- Project 1 - PDF Tools -->
-            <div class="project-card bento-large reveal-up" data-delay="0">
-                <div class="project-img-wrap">
-                    <img src="assets/images/pdf_tools_mockup.png" alt="PDF Tools">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.vm.ultimate_pdf_tools&hl=en_US" target="_blank" style="text-decoration: none;">
-                                <span class="project-link-btn">View Details →</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <div class="project-tags">
-                        <span class="tag">FLUTTER</span>
-                        <span class="tag">UTILITY</span>
-                    </div>
-                    <h3>PDF Tools</h3>
-                    <p>Ultimate PDF management utility. Read, edit, split, and secure PDF files smoothly.</p>
-                    <div class="project-metric">
-                        <span class="metric-value">PDF</span>
-                        <span class="metric-label">Management</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 - FocusX -->
-            <div class="project-card bento-small reveal-up" data-delay="100">
-                <div class="project-img-wrap">
-                    <img src="assets/images/focusx_mockup.png" alt="FocusX">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.vm.focusx&hl=en_US" target="_blank" style="text-decoration: none;">
-                                <span class="project-link-btn">View Details →</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <div class="project-tags">
-                        <span class="tag">PRODUCTIVITY</span>
-                        <span class="tag">FLUTTER</span>
-                    </div>
-                    <h3>FocusX</h3>
-                    <p>Boost your productivity and stay focused with an intelligent task manager.</p>
-                    <div class="project-metric">
-                        <span class="metric-value">Focus</span>
-                        <span class="metric-label">Tracker</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 - WalletX -->
-            <div class="project-card bento-small reveal-up" data-delay="200">
-                <div class="project-img-wrap">
-                    <img src="assets/images/p3.png" alt="WalletX">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.vm.expense" target="_blank" style="text-decoration: none;">
-                                <span class="project-link-btn">View Details →</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <div class="project-tags">
-                        <span class="tag">FINTECH</span>
-                        <span class="tag">FLUTTER</span>
-                    </div>
-                    <h3>WalletX: Money Manager</h3>
-                    <p>Premium finance tracker with glassmorphic UI &amp; SMS sync.</p>
-                    <div class="project-metric">
-                        <span class="metric-value">SMS</span>
-                        <span class="metric-label">Auto Sync</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 - AudioConnect -->
-            <div class="project-card bento-large reveal-up" data-delay="300">
-                <div class="project-img-wrap">
-                    <img src="assets/images/p4.png" alt="AudioConnect">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.vm.audio_connect&hl=en_US" target="_blank" style="text-decoration: none;">
-                                <span class="project-link-btn">View Details →</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <div class="project-tags">
-                        <span class="tag">UTILITY</span>
-                        <span class="tag">NETWORKING</span>
-                        <span class="tag">WI-FI</span>
-                    </div>
-                    <h3>AudioConnect – PC Bridge</h3>
-                    <p>Wireless audio bridge utility. Streams PC audio to Android and enables phone mic as PC input over Wi-Fi with sub-50ms latency tracking.</p>
-                    <div class="project-metric">
-                        <span class="metric-value">&lt;50ms</span>
-                        <span class="metric-label">Latency</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+    <div class="projects-carousel">
+            <div class="carousel-track-wrapper">
+                <div class="carousel-track">
+                    <!-- Slide 1 - AudioConnect -->
+                    <div class="project-card reveal-up" data-delay="0">
+                        <div class="project-img-wrap">
+                            <img src="assets/images/audioconnect_mockup.png" alt="AudioConnect">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.vm.audio_connect&amp;hl=en_US" target="_blank" style="text-decoration: none;">
+                                        <span class="project-link-btn">View Details →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">UTILITY</span>
+                                <span class="tag">NETWORKING</span>
+                                <span class="tag">WI-FI</span>
+                            </div>
+                            <h3>AudioConnect – PC Bridge</h3>
+                            <p>High-performance wireless bridge that transforms your Android device into a PC speaker or microphone. Utilizes custom low-latency protocols over local Wi-Fi to achieve sub-50ms audio sync, perfect for remote listening, gaming, or voice calls.</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.audio_connect&amp;hl=en_US" target="_blank" class="playstore-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="playstore-icon" fill="currentColor">
+                                    <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
+                                </svg>
+                                <div class="playstore-text">
+                                    <span class="playstore-sub">GET IT ON</span>
+                                    <span class="playstore-title">Google Play</span>
+                                </div>
+                            </a>
+                            <div class="project-metric">
+                                <span class="metric-value">&lt;50ms</span>
+                                <span class="metric-label">Latency</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 - BudgetBhaiya -->
+                    <div class="project-card reveal-up" data-delay="100">
+                        <div class="project-img-wrap">
+                            <img src="assets/images/budgetbhaiya_mockup.png" alt="BudgetBhaiya">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.vm.budgetbhaiya" target="_blank" style="text-decoration: none;">
+                                        <span class="project-link-btn">View Details →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">FINANCE</span>
+                                <span class="tag">UTILITY</span>
+                            </div>
+                            <h3>BudgetBhaiya - Expense Manager</h3>
+                            <p>An automated budget manager that scans financial SMS alerts to track household expenditures. Provides instant budget breakdown alerts, monthly reports, and smart category tagging to ensure users stay on top of their financial goals effortlessly.</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.budgetbhaiya" target="_blank" class="playstore-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="playstore-icon" fill="currentColor">
+                                    <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
+                                </svg>
+                                <div class="playstore-text">
+                                    <span class="playstore-sub">GET IT ON</span>
+                                    <span class="playstore-title">Google Play</span>
+                                </div>
+                            </a>
+                            <div class="project-metric">
+                                <span class="metric-value">Auto</span>
+                                <span class="metric-label">SMS Tracker</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 - PixClear -->
+                    <div class="project-card reveal-up" data-delay="200">
+                        <div class="project-img-wrap">
+                            <img src="assets/images/pixclear_mockup.png" alt="PixClear">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.vm.ai_image_enhancer&amp;hl=en_US" target="_blank" style="text-decoration: none;">
+                                        <span class="project-link-btn">View Details →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">FLUTTER</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">UTILITY</span>
+                            </div>
+                            <h3>PixClear – AI Photo Enhancer</h3>
+                            <p>An advanced photo enhancement application using on-device deep learning models to upscale, de-blur, and restore old or low-resolution images. Reconstructs fine facial details and removes noise while preserving the original artistic look.</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.ai_image_enhancer&amp;hl=en_US" target="_blank" class="playstore-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="playstore-icon" fill="currentColor">
+                                    <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
+                                </svg>
+                                <div class="playstore-text">
+                                    <span class="playstore-sub">GET IT ON</span>
+                                    <span class="playstore-title">Google Play</span>
+                                </div>
+                            </a>
+                            <div class="project-metric">
+                                <span class="metric-value">AI</span>
+                                <span class="metric-label">Photo Enhancer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 - PDF Tools -->
+                    <div class="project-card reveal-up" data-delay="300">
+                        <div class="project-img-wrap">
+                            <img src="assets/images/pdf_tools_mockup.png" alt="PDF Tools">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.vm.ultimate_pdf_tools&amp;hl=en_US" target="_blank" style="text-decoration: none;">
+                                        <span class="project-link-btn">View Details →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">FLUTTER</span>
+                                <span class="tag">UTILITY</span>
+                            </div>
+                            <h3>PDF Tools</h3>
+                            <p>A comprehensive PDF utility designed for seamless document management. Users can easily view, merge, split, compress, and encrypt PDF files directly on-device. Features high-performance parsing and rendering for fast operations without internet dependencies.</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.ultimate_pdf_tools&amp;hl=en_US" target="_blank" class="playstore-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="playstore-icon" fill="currentColor">
+                                    <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
+                                </svg>
+                                <div class="playstore-text">
+                                    <span class="playstore-sub">GET IT ON</span>
+                                    <span class="playstore-title">Google Play</span>
+                                </div>
+                            </a>
+                            <div class="project-metric">
+                                <span class="metric-value">PDF</span>
+                                <span class="metric-label">Management</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 - FocusX -->
+                    <div class="project-card reveal-up" data-delay="400">
+                        <div class="project-img-wrap">
+                            <img src="assets/images/focusx_mockup.png" alt="FocusX">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.vm.focusx&amp;hl=en_US" target="_blank" style="text-decoration: none;">
+                                        <span class="project-link-btn">View Details →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">PRODUCTIVITY</span>
+                                <span class="tag">FLUTTER</span>
+                            </div>
+                            <h3>FocusX</h3>
+                            <p>A minimalist task manager and focus tracker designed to eliminate distractions. Incorporates customizable Pomodoro timers, interactive statistics, and smart categorization to help users build consistent daily routines and track productivity over time.</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.focusx&amp;hl=en_US" target="_blank" class="playstore-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="playstore-icon" fill="currentColor">
+                                    <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
+                                </svg>
+                                <div class="playstore-text">
+                                    <span class="playstore-sub">GET IT ON</span>
+                                    <span class="playstore-title">Google Play</span>
+                                </div>
+                            </a>
+                            <div class="project-metric">
+                                <span class="metric-value">Focus</span>
+                                <span class="metric-label">Tracker</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 6 - Lightning QRScanner -->
+                    <div class="project-card reveal-up" data-delay="500">
+                        <div class="project-img-wrap">
+                            <img src="assets/images/qrscanner_mockup.png" alt="Lightning QRScanner">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.vm.qr_scanner" target="_blank" style="text-decoration: none;">
+                                        <span class="project-link-btn">View Details →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">UTILITY</span>
+                                <span class="tag">FLUTTER</span>
+                            </div>
+                            <h3>Lightning QRScanner &amp; Maker</h3>
+                            <p>A blazing-fast scanning utility supporting all major 1D and 2D barcode formats. Includes an advanced custom QR generator with color styling, business card templates, instant scan history, and batch exporting for utility and professional use.</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.qr_scanner" target="_blank" class="playstore-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="playstore-icon" fill="currentColor">
+                                    <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
+                                </svg>
+                                <div class="playstore-text">
+                                    <span class="playstore-sub">GET IT ON</span>
+                                    <span class="playstore-title">Google Play</span>
+                                </div>
+                            </a>
+                            <div class="project-metric">
+                                <span class="metric-value">Instant</span>
+                                <span class="metric-label">Scan &amp; Make</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 7 - WalletX -->
+                    <div class="project-card reveal-up" data-delay="600">
+                        <div class="project-img-wrap">
+                            <img src="assets/images/walletx_mockup.png" alt="WalletX">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.vm.expense" target="_blank" style="text-decoration: none;">
+                                        <span class="project-link-btn">View Details →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">FINTECH</span>
+                                <span class="tag">FLUTTER</span>
+                            </div>
+                            <h3>WalletX: Money Manager</h3>
+                            <p>A feature-rich personal finance assistant with automatic SMS transaction parsing. Includes interactive charts, multi-account support, category budgets, and a premium glassmorphic UI designed to make expense tracking intuitive and beautiful.</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.vm.expense" target="_blank" class="playstore-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="playstore-icon" fill="currentColor">
+                                    <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
+                                </svg>
+                                <div class="playstore-text">
+                                    <span class="playstore-sub">GET IT ON</span>
+                                    <span class="playstore-title">Google Play</span>
+                                </div>
+                            </a>
+                            <div class="project-metric">
+                                <span class="metric-value">SMS</span>
+                                <span class="metric-label">Auto Sync</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous">←</button>
+            <button class="carousel-btn next" aria-label="Next">→</button>
+            <div class="carousel-dots"></div>
+        </div>
 </section>
 
 <!-- Skills Section -->
@@ -539,7 +680,7 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-content">
-            <div class="footer-logo">VM</div>
+            <div class="footer-logo"><img src="assets/images/logo.png" alt="VM Logo"></div>
             <p>© 2025 Vaju Makwana. Crafted with ♥ and Flutter.</p>
             <div class="footer-links">
                 <a href="https://www.linkedin.com/in/vajumakwana16" target="_blank">LinkedIn</a>

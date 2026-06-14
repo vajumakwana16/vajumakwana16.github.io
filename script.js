@@ -74,13 +74,27 @@ window.addEventListener('scroll', () => {
     
     // Navbar
     if (winScroll > 50) {
-        navbar.style.padding = '0.5rem 2rem';
-        navbar.style.background = 'rgba(5, 5, 5, 0.8)';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.padding = '1rem 2rem';
-        navbar.style.background = 'rgba(5, 5, 5, 0.6)';
+        navbar.classList.remove('scrolled');
     }
 });
+
+// Theme Toggle (Dark/Light Mode)
+const themeToggleBtn = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme') || 'dark';
+
+// Set initial theme
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+}
 
 // Reveal Animations on Scroll
 const observerOptions = {
@@ -189,6 +203,63 @@ dots.forEach((dot, index) => {
         updateCarousel(currentIndex);
     });
 });
+
+// Projects Carousel
+const projTrack = document.querySelector('.projects-carousel .carousel-track');
+const projPrev = document.querySelector('.projects-carousel .carousel-btn.prev');
+const projNext = document.querySelector('.projects-carousel .carousel-btn.next');
+const projDotsContainer = document.querySelector('.projects-carousel .carousel-dots');
+let projCurrent = 0;
+let projSlides = Array.from(projTrack.children).filter(el => el.classList.contains('project-card'));
+
+function createProjDots() {
+  projSlides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.classList.add('proj-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      projCurrent = i;
+      updateProjCarousel();
+    });
+    projDotsContainer.appendChild(dot);
+  });
+}
+
+function updateProjCarousel() {
+  projTrack.style.transform = `translateX(-${projCurrent * 100}%)`;
+  const dots = projDotsContainer.querySelectorAll('.proj-dot');
+  dots.forEach(d => d.classList.remove('active'));
+  if (dots[projCurrent]) dots[projCurrent].classList.add('active');
+}
+
+projNext.addEventListener('click', () => {
+  projCurrent = (projCurrent + 1) % projSlides.length;
+  updateProjCarousel();
+});
+
+projPrev.addEventListener('click', () => {
+  projCurrent = (projCurrent - 1 + projSlides.length) % projSlides.length;
+  updateProjCarousel();
+});
+
+// Initialize dots and autoplay
+createProjDots();
+let projInterval = setInterval(() => {
+  projNext.click();
+}, 5000);
+
+// Pause autoplay on mouse hover, resume on mouse leave
+const projCarouselEl = document.querySelector('.projects-carousel');
+if (projCarouselEl) {
+  projCarouselEl.addEventListener('mouseenter', () => {
+    clearInterval(projInterval);
+  });
+  projCarouselEl.addEventListener('mouseleave', () => {
+    projInterval = setInterval(() => {
+      projNext.click();
+    }, 5000);
+  });
+}
 
 // Particles background (Hero Canvas)
 const canvas = document.getElementById('hero-canvas');
