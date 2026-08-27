@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head>
-  <base href="https://vajumakwana16.github.io/projects/AL/">
+  <base href="/app/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Lifeguard training, certification and water-safety resources from the American Lifeguard Association.">
@@ -130,7 +130,7 @@
     }
 
     window.addEventListener('beforeinstallprompt', function (e) {
-      // Do not prevent default so Chrome can show its native system install prompt/banner
+      e.preventDefault();
       window.deferredInstallPrompt = e;
       window.alaInstallPrompt = e;
     });
@@ -147,17 +147,6 @@
 
     function isPwaInstalled() {
       return (window.isAppInstalled || window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) === true;
-    }
-
-    function isIosOrSafari() {
-      try {
-        var ua = (window.navigator.userAgent || '').toLowerCase();
-        var isIos = /iphone|ipad|ipod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-        var isSafari = /^((?!chrome|android).)*safari/i.test(window.navigator.userAgent);
-        return (isIos || isSafari) === true;
-      } catch (_) {
-        return false;
-      }
     }
 
     function promptPwaInstall() {
