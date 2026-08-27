@@ -121,35 +121,22 @@
   </div>
 
   <script>
-    // Capture PWA install prompt early
-    window.deferredInstallPrompt = null;
-    window.isAppInstalled = false;
+    let deferredPrompt = null;
 
-    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
-      window.isAppInstalled = true;
-    }
-
-    window.addEventListener('beforeinstallprompt', function (e) {
-      // Do not prevent default so Chrome can show its native system install prompt/banner
-      window.deferredInstallPrompt = e;
-      window.alaInstallPrompt = e;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
     });
 
-    window.addEventListener('appinstalled', function () {
-      window.deferredInstallPrompt = null;
-      window.alaInstallPrompt = null;
-      window.isAppInstalled = true;
+    window.addEventListener('appinstalled', () => {
+      deferredPrompt = null;
     });
 
-    function isPwaInstallable() {
-      return (window.deferredInstallPrompt !== null && !window.isAppInstalled) === true;
-    }
+    window.canInstallApp = function () {
+      return !!deferredPrompt;
+    };
 
-    function isPwaInstalled() {
-      return (window.isAppInstalled || window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) === true;
-    }
-
-    function isIosOrSafari() {
+    window.isIosOrSafari = function () {
       try {
         var ua = (window.navigator.userAgent || '').toLowerCase();
         var isIos = /iphone|ipad|ipod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -158,27 +145,15 @@
       } catch (_) {
         return false;
       }
-    }
+    };
 
-    function promptPwaInstall() {
-      var promptEvent = window.deferredInstallPrompt || window.alaInstallPrompt;
-      if (promptEvent) {
-        try {
-          promptEvent.prompt();
-          promptEvent.userChoice.then(function (choiceResult) {
-            if (choiceResult && choiceResult.outcome === 'accepted') {
-              window.isAppInstalled = true;
-            }
-            window.deferredInstallPrompt = null;
-            window.alaInstallPrompt = null;
-          });
-        } catch (err) {
-          console.error("promptPwaInstall error:", err);
-        }
-        return true;
-      }
-      return false;
-    }
+    window.promptInstall = async function () {
+      if (!deferredPrompt) return false;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      return outcome === 'accepted';
+    };
 
     window.addEventListener('flutter-first-frame', function () {
       var boot = document.getElementById('boot');
